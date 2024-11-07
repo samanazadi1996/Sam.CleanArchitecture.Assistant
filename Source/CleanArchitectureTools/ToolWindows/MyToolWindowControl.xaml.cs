@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using CleanArchitectureTools.Infrastructure.Enums;
+using CleanArchitectureTools.Infrastructure.Services;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace CleanArchitectureTools
@@ -10,9 +12,14 @@ namespace CleanArchitectureTools
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private async void button1_Click(object sender, RoutedEventArgs e)
         {
-            VS.MessageBox.Show("CleanArchitectureTools", "Button clicked");
+            await UseCaseService.CreateUseCase("", "name", UseCaseType.Command);
+
+            await VS.MessageBox.ShowAsync("done");
         }
+
     }
+
+
 }

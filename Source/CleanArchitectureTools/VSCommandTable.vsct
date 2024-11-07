@@ -14,7 +14,7 @@
         <Icon guid="ImageCatalogGuid" id="ToolWindow" />
         <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>
-          <ButtonText>My Tool Window</ButtonText>
+          <ButtonText>Clean Architecture Tools</ButtonText>
           <LocCanonicalName>.View.MyToolWindow</LocCanonicalName>
         </Strings>
       </Button>
