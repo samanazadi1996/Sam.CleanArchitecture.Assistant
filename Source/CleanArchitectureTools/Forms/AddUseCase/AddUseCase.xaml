@@ -18,7 +18,7 @@
 
             <StackPanel Margin="10,10,10,0">
                 <Label Content="Feature Name:" FontWeight="Bold"/>
-                <ComboBox MinHeight="30" IsEditable="True">
+                <ComboBox MinHeight="30" IsEditable="True" Name="FeatureNameComboBox">
                     <ComboBoxItem Content="Products"/>
                     <ComboBoxItem Content="Orders"/>
                 </ComboBox>
@@ -26,12 +26,12 @@
 
             <StackPanel Margin="10,10,10,0">
                 <Label Content="UseCase Name:" FontWeight="Bold"/>
-                <TextBox FontWeight="Normal" MinHeight="30" />
+                <TextBox FontWeight="Normal" MinHeight="30" Name="UseCaseNameTextBox"/>
             </StackPanel>
 
             <StackPanel Margin="10,10,10,0">
                 <Label Content="UseCase Type:" FontWeight="Bold"/>
-                <ComboBox MinHeight="30" >
+                <ComboBox MinHeight="30"   Name="UseCaseTypeComboBox">
                     <ComboBoxItem Content="Query"/>
                     <ComboBoxItem Content="Command"/>
                     <ComboBoxItem Content="QueryPagedList"/>
@@ -41,12 +41,57 @@
 
             <StackPanel Margin="10,10,10,0">
                 <Label Content="Return Type:" FontWeight="Bold"/>
-                <ComboBox MinHeight="30" IsEditable="True">
-                    <ComboBoxItem Content="void"/>
-                    <ComboBoxItem Content="int"/>
-                    <ComboBoxItem Content="string"/>
-                    <ComboBoxItem Content="bool"/>
+                <ComboBox MinHeight="30" IsEditable="True" Name="ReturnTypeComboBox">
+                    <!-- انواع داده‌های پایه -->
+                    <ComboBoxItem Content="void" />
+                    <ComboBoxItem Content="int" />
+                    <ComboBoxItem Content="long" />
+                    <ComboBoxItem Content="short" />
+                    <ComboBoxItem Content="byte" />
+                    <ComboBoxItem Content="sbyte" />
+                    <ComboBoxItem Content="double" />
+                    <ComboBoxItem Content="float" />
+                    <ComboBoxItem Content="decimal" />
+                    <ComboBoxItem Content="bool" />
+                    <ComboBoxItem Content="char" />
+                    <ComboBoxItem Content="string" />
+                    <ComboBoxItem Content="DateTime" />
+                    <ComboBoxItem Content="TimeSpan" />
+                    <ComboBoxItem Content="Guid" />
+                    <ComboBoxItem Content="Uri" />
+                    <ComboBoxItem Content="object" />
+
+                    <!-- انواع داده‌های مجموعه‌ها -->
+                    <ComboBoxItem Content="List&lt;int&gt;" />
+                    <ComboBoxItem Content="List&lt;string&gt;" />
+                    <ComboBoxItem Content="List&lt;bool&gt;" />
+                    <ComboBoxItem Content="List&lt;double&gt;" />
+                    <ComboBoxItem Content="Dictionary&lt;string, int&gt;" />
+                    <ComboBoxItem Content="Dictionary&lt;int, string&gt;" />
+                    <ComboBoxItem Content="IEnumerable&lt;int&gt;" />
+                    <ComboBoxItem Content="IEnumerable&lt;string&gt;" />
+                    <ComboBoxItem Content="Queue&lt;int&gt;" />
+                    <ComboBoxItem Content="Stack&lt;string&gt;" />
+
+                    <!-- انواع داده‌های مربوط به مجموعه‌های همزمان (Concurrency) -->
+                    <ComboBoxItem Content="Task" />
+                    <ComboBoxItem Content="Task&lt;T&gt;" />
+                    <ComboBoxItem Content="IAsyncEnumerable&lt;int&gt;" />
+                    <ComboBoxItem Content="IAsyncEnumerable&lt;string&gt;" />
+
+                    <!-- انواع داده‌های مربوط به اپلیکیشن‌های وب و شبکه -->
+                    <ComboBoxItem Content="HttpResponseMessage" />
+                    <ComboBoxItem Content="HttpRequestMessage" />
+                    <ComboBoxItem Content="Stream" />
+
+                    <!-- انواع داده‌های مربوط به مدل‌های پیچیده‌تر -->
+                    <ComboBoxItem Content="Tuple&lt;int, string&gt;" />
+                    <ComboBoxItem Content="Tuple&lt;int, string, bool&gt;" />
+                    <ComboBoxItem Content="KeyValuePair&lt;int, string&gt;" />
+                    <ComboBoxItem Content="CustomObject" />
                 </ComboBox>
+
+
             </StackPanel>
 
             <StackPanel Margin="10,20,10,0" HorizontalAlignment="Right">
@@ -56,7 +101,7 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
 
-                    <Button MinHeight="30" Width="Auto" Content="Execute" Grid.Column="1"/>
+                    <Button MinHeight="30" Width="Auto" Content="Execute" Grid.Column="1" Click="Execute"/>
                     <Button MinHeight="30" Width="Auto" Content="Close" Grid.Column="0" Margin="0,0,10,0" Click="CloseForm"/>
                 </Grid>
             </StackPanel>

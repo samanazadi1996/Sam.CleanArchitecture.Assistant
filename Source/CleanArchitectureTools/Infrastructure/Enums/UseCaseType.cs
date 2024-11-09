@@ -1,6 +1,10 @@
-﻿namespace CleanArchitectureTools.Infrastructure.Enums;
+﻿using System.ComponentModel;
+
+namespace CleanArchitectureTools.Infrastructure.Enums;
 
 public enum UseCaseType
 {
-    Query, Command
+    Query,
+    Command,
+    QueryPagedList,
 }

@@ -1,11 +1,10 @@
-﻿namespace CleanArchitectureTools
+﻿namespace CleanArchitectureTools;
+
+[Command(PackageIds.ShowMainWindowCommand)]
+internal sealed class MainWindowCommand : BaseCommand<MainWindowCommand>
 {
-    [Command(PackageIds.ShowMainWindowCommand)]
-    internal sealed class MainWindowCommand : BaseCommand<MainWindowCommand>
+    protected override Task ExecuteAsync(OleMenuCmdEventArgs e)
     {
-        protected override Task ExecuteAsync(OleMenuCmdEventArgs e)
-        {
-            return MainWindow.ShowAsync();
-        }
+        return MainWindow.ShowAsync();
     }
 }
