@@ -3,7 +3,7 @@
     <Metadata>
         <Identity Id="CleanArchitectureAssistant.81a8eada-9fb6-4859-a99e-cb53387c1d1a" Version="1.0.0" Language="en-US" Publisher="samanazadi1996" />
         <DisplayName>Clean Architecture Assistant</DisplayName>
-        <Description xml:space="preserve">Empty VSIX Project.</Description>
+        <Description xml:space="preserve">A powerful Visual Studio extension that streamlines .NET Clean Architecture development, enabling you to write cleaner, more efficient code with unmatched ease.</Description>
         <Icon>Resources\Icon.png</Icon>
         <PreviewImage>Resources\Icon.png</PreviewImage>
     </Metadata>
