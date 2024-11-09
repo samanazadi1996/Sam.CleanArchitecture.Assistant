@@ -1,6 +1,6 @@
 # Clean Architecture Assistant for Visual Studio
 
-**Clean Architecture Assistant** is a powerful and practical Visual Studio extension designed for .NET developers working with Clean Architecture. This extension streamlines the process of creating and managing Clean Architecture projects, making it faster, simpler, and more standardized. With a suite of useful features, Clean Architecture Assistant reduces repetitive tasks and allows developers to focus on core application logic.
+**Clean Architecture Assistant** is a powerful and practical Visual Studio extension designed for .NET developers working with [Clean Architecture](https://github.com/samanazadi1996/Sam.CleanArchitecture). This extension streamlines the process of creating and managing Clean Architecture projects, making it faster, simpler, and more standardized. With a suite of useful features, Clean Architecture Assistant reduces repetitive tasks and allows developers to focus on core application logic.
 
 ## Key Features
 
