@@ -20,6 +20,6 @@ namespace CleanArchitectureTools
     /// </summary>
     internal sealed partial class PackageIds
     {
-        public const int MyCommand = 0x0100;
+        public const int ShowMainWindowCommand = 0x0100;
     }
 }

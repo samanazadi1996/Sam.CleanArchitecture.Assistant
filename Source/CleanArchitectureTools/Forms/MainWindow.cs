@@ -6,7 +6,7 @@ using System.Windows;
 
 namespace CleanArchitectureTools
 {
-    public class MyToolWindow : BaseToolWindow<MyToolWindow>
+    public class MainWindow : BaseToolWindow<MainWindow>
     {
         public override string GetTitle(int toolWindowId) => "Clean Architecture Tools";
 
@@ -14,7 +14,7 @@ namespace CleanArchitectureTools
 
         public override Task<FrameworkElement> CreateAsync(int toolWindowId, CancellationToken cancellationToken)
         {
-            return Task.FromResult<FrameworkElement>(new MyToolWindowControl());
+            return Task.FromResult<FrameworkElement>(new MainWindowControl());
         }
 
         [Guid("ddbe5255-d656-422f-8789-ca6fb7ff7e8e")]

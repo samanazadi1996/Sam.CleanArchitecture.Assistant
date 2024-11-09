@@ -45,11 +45,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Forms\AddUseCase\AddUseCase.cs" />
+    <Compile Include="Forms\AddUseCase\AddUseCase.xaml.cs">
+      <DependentUpon>AddUseCase.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Infrastructure\Data\UseCaseData.cs" />
     <Compile Include="Infrastructure\Enums\UseCaseType.cs" />
     <Compile Include="Infrastructure\Services\UseCaseService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Commands\MyToolWindowCommand.cs" />
+    <Compile Include="Commands\MainWindowCommand.cs" />
     <Compile Include="CleanArchitectureToolsPackage.cs" />
     <Compile Include="source.extension.cs">
       <AutoGen>True</AutoGen>
@@ -81,13 +85,17 @@
     </VSCTCompile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ToolWindows\MyToolWindow.cs" />
-    <Page Include="ToolWindows\MyToolWindowControl.xaml">
+    <Compile Include="Forms\MainWindow.cs" />
+    <Page Include="Forms\AddUseCase\AddUseCase.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\MainWindowControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Compile Include="ToolWindows\MyToolWindowControl.xaml.cs">
-      <DependentUpon>MyToolWindowControl.xaml</DependentUpon>
+    <Compile Include="Forms\MainWindowControl.xaml.cs">
+      <DependentUpon>MainWindowControl.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

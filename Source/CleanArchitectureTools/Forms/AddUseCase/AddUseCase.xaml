@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="CleanArchitectureTools.AddUseCase.AddUseCaseWindowControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:imaging="clr-namespace:Microsoft.VisualStudio.Imaging;assembly=Microsoft.VisualStudio.Imaging"
+             xmlns:theming="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.VisualStudio.Imaging"
+             xmlns:util="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.VisualStudio.Utilities"
+             xmlns:catalog="clr-namespace:Microsoft.VisualStudio.Imaging;assembly=Microsoft.VisualStudio.ImageCatalog"
+             xmlns:toolkit="clr-namespace:Community.VisualStudio.Toolkit;assembly=Community.VisualStudio.Toolkit"
+             toolkit:Themes.UseVsTheme="True"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             Name="AddUseCase">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+
+            <StackPanel Margin="10,10,10,0">
+                <Label Content="Feature Name:" FontWeight="Bold"/>
+                <ComboBox MinHeight="30" IsEditable="True">
+                    <ComboBoxItem Content="Products"/>
+                    <ComboBoxItem Content="Orders"/>
+                </ComboBox>
+            </StackPanel>
+
+            <StackPanel Margin="10,10,10,0">
+                <Label Content="UseCase Name:" FontWeight="Bold"/>
+                <TextBox FontWeight="Normal" MinHeight="30" />
+            </StackPanel>
+
+            <StackPanel Margin="10,10,10,0">
+                <Label Content="UseCase Type:" FontWeight="Bold"/>
+                <ComboBox MinHeight="30" >
+                    <ComboBoxItem Content="Query"/>
+                    <ComboBoxItem Content="Command"/>
+                    <ComboBoxItem Content="QueryPagedList"/>
+                </ComboBox>
+
+            </StackPanel>
+
+            <StackPanel Margin="10,10,10,0">
+                <Label Content="Return Type:" FontWeight="Bold"/>
+                <ComboBox MinHeight="30" IsEditable="True">
+                    <ComboBoxItem Content="void"/>
+                    <ComboBoxItem Content="int"/>
+                    <ComboBoxItem Content="string"/>
+                    <ComboBoxItem Content="bool"/>
+                </ComboBox>
+            </StackPanel>
+
+            <StackPanel Margin="10,20,10,0" HorizontalAlignment="Right">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button MinHeight="30" Width="Auto" Content="Execute" Grid.Column="1"/>
+                    <Button MinHeight="30" Width="Auto" Content="Close" Grid.Column="0" Margin="0,0,10,0" Click="CloseForm"/>
+                </Grid>
+            </StackPanel>
+
+
+        </StackPanel>
+    </Grid>
+</UserControl>
