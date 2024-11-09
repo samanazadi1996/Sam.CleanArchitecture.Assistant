@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace CleanArchitectureTools.Infrastructure.Services;
+namespace CleanArchitectureAssistant.Infrastructure.Services;
 
 internal class CommonService
 {

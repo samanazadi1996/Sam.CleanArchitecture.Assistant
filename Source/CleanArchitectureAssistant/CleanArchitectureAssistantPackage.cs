@@ -2,19 +2,19 @@
 global using Microsoft.VisualStudio.Shell;
 global using System;
 global using Task = System.Threading.Tasks.Task;
-using CleanArchitectureTools.AddUseCase;
+using CleanArchitectureAssistant.AddUseCase;
 using System.Runtime.InteropServices;
 using System.Threading;
 
-namespace CleanArchitectureTools;
+namespace CleanArchitectureAssistant;
 
 [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
 [InstalledProductRegistration(Vsix.Name, Vsix.Description, Vsix.Version)]
 [ProvideToolWindow(typeof(MainWindow.Pane), Style = VsDockStyle.Tabbed, Window = WindowGuids.SolutionExplorer)]
 [ProvideToolWindow(typeof(AddUseCaseWindow.Pane), Style = VsDockStyle.Tabbed, Window = WindowGuids.SolutionExplorer)]
 [ProvideMenuResource("Menus.ctmenu", 1)]
-[Guid(PackageGuids.CleanArchitectureToolsString)]
-public sealed class CleanArchitectureToolsPackage : ToolkitPackage
+[Guid(PackageGuids.CleanArchitectureAssistantString)]
+public sealed class CleanArchitectureAssistantPackage : ToolkitPackage
 {
     protected override async Task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
     {

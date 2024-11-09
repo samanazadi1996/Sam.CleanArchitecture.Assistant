@@ -4,20 +4,20 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace CleanArchitectureTools.AddUseCase;
+namespace CleanArchitectureAssistant;
 
-public class AddUseCaseWindow : BaseToolWindow<AddUseCaseWindow>
+public class MainWindow : BaseToolWindow<MainWindow>
 {
-    public override string GetTitle(int toolWindowId) => "Clean Architecture Tools";
+    public override string GetTitle(int toolWindowId) => "Clean Architecture Assistant";
 
     public override Type PaneType => typeof(Pane);
 
     public override Task<FrameworkElement> CreateAsync(int toolWindowId, CancellationToken cancellationToken)
     {
-        return Task.FromResult<FrameworkElement>(new AddUseCaseWindowControl());
+        return Task.FromResult<FrameworkElement>(new MainWindowControl());
     }
 
-    [Guid("a02e2c73-7a10-e6d4-3314-9597613b6099")]
+    [Guid("ddbe5255-d656-422f-8789-ca6fb7ff7e8e")]
     internal class Pane : ToolkitToolWindowPane
     {
         public Pane()

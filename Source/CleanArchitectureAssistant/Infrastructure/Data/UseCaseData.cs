@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using CleanArchitectureTools.Infrastructure.Enums;
+using CleanArchitectureAssistant.Infrastructure.Enums;
 
-namespace CleanArchitectureTools.Infrastructure.Data;
+namespace CleanArchitectureAssistant.Infrastructure.Data;
 
 internal class UseCaseData
 {

@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using CleanArchitectureTools.Infrastructure.Enums;
+using CleanArchitectureAssistant.Infrastructure.Enums;
 using System.Linq;
 using System.Threading.Tasks;
-using CleanArchitectureTools.Infrastructure.Data;
+using CleanArchitectureAssistant.Infrastructure.Data;
 
-namespace CleanArchitectureTools.Infrastructure.Services;
+namespace CleanArchitectureAssistant.Infrastructure.Services;
 
 internal class ApplicationService
 {

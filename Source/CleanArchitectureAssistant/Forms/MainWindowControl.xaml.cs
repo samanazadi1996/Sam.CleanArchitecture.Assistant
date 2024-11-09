@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace CleanArchitectureTools;
+namespace CleanArchitectureAssistant;
 
 public partial class MainWindowControl : UserControl
 {

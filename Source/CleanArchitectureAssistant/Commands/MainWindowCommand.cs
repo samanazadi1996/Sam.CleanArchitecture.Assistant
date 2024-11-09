@@ -1,4 +1,4 @@
-﻿namespace CleanArchitectureTools;
+﻿namespace CleanArchitectureAssistant;
 
 [Command(PackageIds.ShowMainWindowCommand)]
 internal sealed class MainWindowCommand : BaseCommand<MainWindowCommand>

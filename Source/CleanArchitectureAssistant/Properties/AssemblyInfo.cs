@@ -1,4 +1,4 @@
-using CleanArchitectureTools;
+using CleanArchitectureAssistant;
 using System.Reflection;
 using System.Runtime.InteropServices;
 

@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{0797B3E9-4FB1-43B7-AC9E-7BBDCD8F93DF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{CC145721-61EC-43AA-9527-3F943DF18239}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitectureTools", "Source\CleanArchitectureTools\CleanArchitectureTools.csproj", "{46C99ACF-456D-495F-AC3A-4C4A48E7952A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitectureAssistant", "Source\CleanArchitectureAssistant\CleanArchitectureAssistant.csproj", "{46C99ACF-456D-495F-AC3A-4C4A48E7952A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,9 +34,9 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{46C99ACF-456D-495F-AC3A-4C4A48E7952A} = {0797B3E9-4FB1-43B7-AC9E-7BBDCD8F93DF}
+		{46C99ACF-456D-495F-AC3A-4C4A48E7952A} = {CC145721-61EC-43AA-9527-3F943DF18239}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {6EA25A54-92ED-4737-8CE9-47C27FE80E5B}
+		SolutionGuid = {35063093-1512-4142-BFB3-7728B2E33916}
 	EndGlobalSection
 EndGlobal

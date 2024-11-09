@@ -1,9 +1,9 @@
-﻿using CleanArchitectureTools.Infrastructure.Services;
+﻿using CleanArchitectureAssistant.Infrastructure.Services;
 using System.Windows.Controls;
-using CleanArchitectureTools.Infrastructure.Enums;
+using CleanArchitectureAssistant.Infrastructure.Enums;
 using System.Windows;
 
-namespace CleanArchitectureTools.AddUseCase;
+namespace CleanArchitectureAssistant.AddUseCase;
 
 public partial class AddUseCaseWindowControl : UserControl
 {
