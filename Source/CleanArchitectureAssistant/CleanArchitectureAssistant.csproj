@@ -49,6 +49,7 @@
     <Compile Include="Forms\AddUseCase\AddUseCase.xaml.cs">
       <DependentUpon>AddUseCase.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\DTOs\FileDto.cs" />
     <Compile Include="Infrastructure\Data\UseCaseData.cs" />
     <Compile Include="Infrastructure\Enums\UseCaseType.cs" />
     <Compile Include="Infrastructure\Services\ApplicationService.cs" />

@@ -7,9 +7,9 @@ using CleanArchitectureAssistant.Infrastructure.Data;
 
 namespace CleanArchitectureAssistant.Infrastructure.Services;
 
-internal class ApplicationService
+public class ApplicationService
 {
-    internal static async Task<bool> CreateUseCase(string featureName, string useCaseName, UseCaseType type,string returnType)
+    public static async Task<bool> CreateUseCase(string featureName, string useCaseName, UseCaseType type,string returnType)
     {
         var useCaseTypes = new Dictionary<UseCaseType, string>()
         {
@@ -40,7 +40,7 @@ internal class ApplicationService
         return true;
     }
 
-    internal static async Task<string> GetApplicationPath()
+    public static async Task<string> GetApplicationPath()
     {
         var projects = await VS.Solutions.GetAllProjectsAsync();
 
@@ -52,7 +52,7 @@ internal class ApplicationService
         return Directory.GetParent(applicationCsProj)?.FullName;
     }
 
-    internal static async Task<List<string>> GetFeatures()
+    public static async Task<List<string>> GetFeatures()
     {
         var applicationPath = await GetApplicationPath();
         if (string.IsNullOrEmpty(applicationPath))

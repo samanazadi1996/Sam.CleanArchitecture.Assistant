@@ -1,17 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using CleanArchitectureAssistant.Infrastructure.DTOs;
 using CleanArchitectureAssistant.Infrastructure.Enums;
+using System.Collections.Generic;
 
 namespace CleanArchitectureAssistant.Infrastructure.Data;
 
-internal class UseCaseData
+public class UseCaseData
 {
-    internal static List<UseCaseClassDto> GetData(string solutionName,
+    public static List<FileDto> GetData(string solutionName,
         string featureName, string useCaseName, UseCaseType type, string returnType)
     {
-        List<UseCaseClassDto> result = [];
+        List<FileDto> result = [];
         if (type == UseCaseType.Query)
         {
-            result.Add(new UseCaseClassDto($"{useCaseName}Query.cs")
+            result.Add(new FileDto($"{useCaseName}Query.cs")
             {
                 Content = @$"﻿using {solutionName}.Application.Wrappers;
 using MediatR;
@@ -24,7 +25,7 @@ public class {useCaseName}Query : IRequest<BaseResult<{returnType}>>
 }}",
             });
 
-            result.Add(new UseCaseClassDto($"{useCaseName}QueryHandler.cs")
+            result.Add(new FileDto($"{useCaseName}QueryHandler.cs")
             {
                 Content = $@"using {solutionName}.Application.Wrappers;
 using MediatR;
@@ -46,7 +47,7 @@ public class {useCaseName}QueryHandler : IRequestHandler<{useCaseName}Query, Bas
         }
         else if (type == UseCaseType.QueryPagedList)
         {
-            result.Add(new UseCaseClassDto($"{useCaseName}Query.cs")
+            result.Add(new FileDto($"{useCaseName}Query.cs")
             {
                 Content = @$"﻿using {solutionName}.Application.Wrappers;
 using {solutionName}.Application.Parameters;
@@ -60,7 +61,7 @@ public class {useCaseName}Query : PaginationRequestParameter, IRequest<PagedResp
 }}",
             });
 
-            result.Add(new UseCaseClassDto($"{useCaseName}QueryHandler.cs")
+            result.Add(new FileDto($"{useCaseName}QueryHandler.cs")
             {
                 Content = @$"﻿using MediatR;
 using System.Collections.Generic;
@@ -87,7 +88,7 @@ public class {useCaseName}QueryHandler : IRequestHandler<{useCaseName}Query, Pag
         }
         else
         {
-            result.Add(new UseCaseClassDto($"{useCaseName}Command.cs")
+            result.Add(new FileDto($"{useCaseName}Command.cs")
             {
                 Content = @$"using {solutionName}.Application.Wrappers;
 using MediatR;
@@ -100,7 +101,7 @@ public class {useCaseName}Command : IRequest<BaseResult<{returnType}>>
 }}",
             });
 
-            result.Add(new UseCaseClassDto($"{useCaseName}CommandHandler.cs")
+            result.Add(new FileDto($"{useCaseName}CommandHandler.cs")
             {
                 Content = @$"using {solutionName}.Application.Wrappers;
 using MediatR;
@@ -120,7 +121,7 @@ public class {useCaseName}CommandHandler : IRequestHandler<{useCaseName}Command,
 }}",
             });
 
-            result.Add(new UseCaseClassDto($"{useCaseName}CommandValidator.cs")
+            result.Add(new FileDto($"{useCaseName}CommandValidator.cs")
             {
                 Content = @$"using {solutionName}.Application.Interfaces;
 using FluentValidation;
@@ -153,7 +154,7 @@ public class {useCaseName}CommandValidator : AbstractValidator<{useCaseName}Comm
         {
             var className = $"{useCaseName}Response";
 
-            result.Add(new UseCaseClassDto($"{className}.cs")
+            result.Add(new FileDto($"{className}.cs")
             {
                 Content = @$"namespace {solutionName}.Application.Features.{featureName}.Queries.{useCaseName};
 
@@ -173,10 +174,4 @@ public class {className}
         return result;
     }
 
-    internal class UseCaseClassDto(string name)
-    {
-        public string Name { get; } = name;
-        public string Content { get; set; }
-
-    }
 }

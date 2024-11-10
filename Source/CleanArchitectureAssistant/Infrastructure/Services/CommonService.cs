@@ -2,9 +2,9 @@
 
 namespace CleanArchitectureAssistant.Infrastructure.Services;
 
-internal class CommonService
+public class CommonService
 {
-    internal static async Task<string> GetSolutionName()
+    public static async Task<string> GetSolutionName()
     {
         var slnName =(await VS.Solutions.GetCurrentSolutionAsync())?.Name;
 
