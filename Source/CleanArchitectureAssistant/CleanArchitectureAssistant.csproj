@@ -45,6 +45,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Forms\AddLanguage\AddLanguage.cs" />
+    <Compile Include="Forms\AddLanguage\AddLanguage.xaml.cs">
+      <DependentUpon>AddLanguage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddUseCase\AddUseCase.cs" />
     <Compile Include="Forms\AddUseCase\AddUseCase.xaml.cs">
       <DependentUpon>AddUseCase.xaml</DependentUpon>
@@ -88,6 +92,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Forms\MainWindow.cs" />
+    <Page Include="Forms\AddLanguage\AddLanguage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Forms\AddUseCase\AddUseCase.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

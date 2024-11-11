@@ -4,9 +4,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace CleanArchitectureAssistant.Forms;
+namespace CleanArchitectureAssistant.Forms.AddLanguage;
 
-public class MainWindow : BaseToolWindow<MainWindow>
+public class AddLanguageWindow : BaseToolWindow<AddLanguageWindow>
 {
     public override string GetTitle(int toolWindowId) => "Clean Architecture Assistant";
 
@@ -14,10 +14,10 @@ public class MainWindow : BaseToolWindow<MainWindow>
 
     public override Task<FrameworkElement> CreateAsync(int toolWindowId, CancellationToken cancellationToken)
     {
-        return Task.FromResult<FrameworkElement>(new MainWindowControl());
+        return Task.FromResult<FrameworkElement>(new AddLanguageWindowControl());
     }
 
-    [Guid("ddbe5255-d656-422f-8789-ca6fb7ff7e8e")]
+    [Guid("25c38ced-7d46-948e-f18b-b0656fb792f1")]
     internal class Pane : ToolkitToolWindowPane
     {
         public Pane()

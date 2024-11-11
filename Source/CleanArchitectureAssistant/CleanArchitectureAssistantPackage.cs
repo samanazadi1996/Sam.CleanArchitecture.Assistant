@@ -2,9 +2,11 @@
 global using Microsoft.VisualStudio.Shell;
 global using System;
 global using Task = System.Threading.Tasks.Task;
-using CleanArchitectureAssistant.AddUseCase;
+using CleanArchitectureAssistant.Forms.AddLanguage;
+using CleanArchitectureAssistant.Forms.AddUseCase;
 using System.Runtime.InteropServices;
 using System.Threading;
+using CleanArchitectureAssistant.Forms;
 
 namespace CleanArchitectureAssistant;
 
@@ -12,6 +14,7 @@ namespace CleanArchitectureAssistant;
 [InstalledProductRegistration(Vsix.Name, Vsix.Description, Vsix.Version)]
 [ProvideToolWindow(typeof(MainWindow.Pane), Style = VsDockStyle.Tabbed, Window = WindowGuids.SolutionExplorer)]
 [ProvideToolWindow(typeof(AddUseCaseWindow.Pane), Style = VsDockStyle.Tabbed, Window = WindowGuids.SolutionExplorer)]
+[ProvideToolWindow(typeof(AddLanguageWindow.Pane), Style = VsDockStyle.Tabbed, Window = WindowGuids.SolutionExplorer)]
 [ProvideMenuResource("Menus.ctmenu", 1)]
 [Guid(PackageGuids.CleanArchitectureAssistantString)]
 public sealed class CleanArchitectureAssistantPackage : ToolkitPackage

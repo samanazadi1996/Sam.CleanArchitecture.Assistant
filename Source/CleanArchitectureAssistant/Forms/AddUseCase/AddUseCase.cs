@@ -4,7 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace CleanArchitectureAssistant.AddUseCase;
+namespace CleanArchitectureAssistant.Forms.AddUseCase;
 
 public class AddUseCaseWindow : BaseToolWindow<AddUseCaseWindow>
 {

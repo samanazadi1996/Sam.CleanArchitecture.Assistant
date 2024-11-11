@@ -3,7 +3,7 @@ using System.Windows.Controls;
 using CleanArchitectureAssistant.Infrastructure.Enums;
 using System.Windows;
 
-namespace CleanArchitectureAssistant.AddUseCase;
+namespace CleanArchitectureAssistant.Forms.AddUseCase;
 
 public partial class AddUseCaseWindowControl : UserControl
 {
@@ -11,7 +11,6 @@ public partial class AddUseCaseWindowControl : UserControl
     {
         InitializeComponent();
         LoadFeatures();
-
     }
 
     private async void CloseForm(object sender, System.Windows.RoutedEventArgs e)

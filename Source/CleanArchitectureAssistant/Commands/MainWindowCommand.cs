@@ -1,4 +1,6 @@
-﻿namespace CleanArchitectureAssistant;
+﻿using CleanArchitectureAssistant.Forms;
+
+namespace CleanArchitectureAssistant;
 
 [Command(PackageIds.ShowMainWindowCommand)]
 internal sealed class MainWindowCommand : BaseCommand<MainWindowCommand>
