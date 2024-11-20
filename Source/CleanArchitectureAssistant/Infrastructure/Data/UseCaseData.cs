@@ -153,10 +153,11 @@ public class {useCaseName}CommandValidator : AbstractValidator<{useCaseName}Comm
         else if (returnType == "CustomObject")
         {
             var className = $"{useCaseName}Response";
+            var featureType = type == UseCaseType.Command ? "Commands" : "Queries";
 
             result.Add(new FileDto($"{className}.cs")
             {
-                Content = @$"namespace {solutionName}.Application.Features.{featureName}.Queries.{useCaseName};
+                Content = @$"namespace {solutionName}.Application.Features.{featureName}.{featureType}.{useCaseName};
 
 public class {className}
 {{
