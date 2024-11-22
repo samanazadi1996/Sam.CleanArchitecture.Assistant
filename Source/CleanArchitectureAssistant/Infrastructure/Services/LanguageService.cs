@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
-using CleanArchitectureAssistant.Infrastructure.Data;
+﻿using CleanArchitectureAssistant.Infrastructure.Data;
+using CleanArchitectureAssistant.Infrastructure.DTOs;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace CleanArchitectureAssistant.Infrastructure.Services;
 
@@ -26,7 +28,7 @@ public class LanguageService
             foreach (var item in LanguageData.GetData(culture))
             {
                 if (!string.IsNullOrEmpty(baseCulture))
-                    item.Content = await Clone(item.Content);
+                    item.Content = await Clone(item, baseCulture);
 
                 File.WriteAllText(Path.Combine(dir, item.Name), item.Content);
             }
@@ -82,10 +84,6 @@ public class LanguageService
         return true;
     }
 
-    private static async Task<string> Clone(string itemContent)
-    {
-        return itemContent;
-    }
     public static async Task<List<string>> GetApplicationLanguages()
     {
         try
@@ -113,6 +111,47 @@ public class LanguageService
         {
             return [];
         }
+
+    }
+
+    private static async Task<string> Clone(FileDto item, string baseCulture)
+    {
+        try
+        {
+            var filename = baseCulture
+                .Split('-')
+                .FirstOrDefault(p => p.Trim().Split('.')[0] == item.Name.Split('.')[0]) ?? "";
+
+            var from = filename.Split('.').Length > 2 ? filename.Split('.')[1] : "en";
+            var to = item.Name.Split('.')[1];
+
+            var rp = Path.Combine(await CommonService.GetResourcesPath(), "ProjectResources", filename.Trim());
+            if (File.Exists(rp))
+            {
+
+                var content = File.ReadAllText(rp);
+
+                var xdoc = XDocument.Parse(content);
+
+
+
+                foreach (var dataElement in xdoc.Descendants("data"))
+                {
+                    string value = dataElement.Element("value")?.Value ?? string.Empty;
+
+                    var translated = await GoogleApiService.Translate(value, from, to);
+
+                    content = content.Replace(value, translated);
+                }
+
+                return content;
+            }
+        }
+        catch (Exception e)
+        {
+        }
+
+        return item.Content;
 
     }
 }
