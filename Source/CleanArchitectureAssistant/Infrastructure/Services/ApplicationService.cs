@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System.CodeDom;
+using System.Collections.Generic;
 using System.IO;
 using CleanArchitectureAssistant.Infrastructure.Enums;
 using System.Linq;
 using System.Threading.Tasks;
 using CleanArchitectureAssistant.Infrastructure.Data;
+using System;
 
 namespace CleanArchitectureAssistant.Infrastructure.Services;
 
@@ -23,7 +25,9 @@ public class ApplicationService
             if (string.IsNullOrEmpty(applicationPath))
                 return false;
 
-            var dir = Path.Combine(applicationPath, "Features",featureName, useCaseTypes[type],useCaseName);
+            var un = useCaseName + (type == UseCaseType.QueryPagedList? "PagedList":"");
+
+            var dir = Path.Combine(applicationPath, "Features", featureName, useCaseTypes[type], un);
             if (!Directory.Exists(dir))
                 Directory.CreateDirectory(dir);
 

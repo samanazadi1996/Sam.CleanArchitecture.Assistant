@@ -58,6 +58,7 @@
     <Compile Include="Infrastructure\Enums\UseCaseType.cs" />
     <Compile Include="Infrastructure\Services\ApplicationService.cs" />
     <Compile Include="Infrastructure\Services\CommonService.cs" />
+    <Compile Include="Infrastructure\Services\ResourceHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Commands\MainWindowCommand.cs" />
     <Compile Include="CleanArchitectureAssistantPackage.cs" />
@@ -73,6 +74,27 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\Appdata\ca-use-case\Features\FeatureName\Commands\UseCaseName\UseCaseNameCommand.ca">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Appdata\ca-use-case\Features\FeatureName\Commands\UseCaseName\UseCaseNameCommandHandler.ca">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Appdata\ca-use-case\Features\FeatureName\Commands\UseCaseName\UseCaseNameCommandValidator.ca">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Appdata\ca-use-case\Features\FeatureName\Queries\UseCaseNamePagedList\UseCaseNamePagedListQuery.ca">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Appdata\ca-use-case\Features\FeatureName\Queries\UseCaseNamePagedList\UseCaseNamePagedListQueryHandler.ca">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Appdata\ca-use-case\Features\FeatureName\Queries\UseCaseName\UseCaseNameQuery.ca">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Appdata\ca-use-case\Features\FeatureName\Queries\UseCaseName\UseCaseNameQueryHandler.ca">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
       <Generator>VsixManifestGenerator</Generator>
