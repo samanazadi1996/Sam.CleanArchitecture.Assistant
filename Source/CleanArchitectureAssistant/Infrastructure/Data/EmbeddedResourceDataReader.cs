@@ -1,14 +1,14 @@
 ﻿using System.IO;
 using System.Reflection;
 
-namespace CleanArchitectureAssistant.Infrastructure.Services;
+namespace CleanArchitectureAssistant.Infrastructure.Data;
 
-public class ResourceHelper
+public class EmbeddedResourceDataReader
 {
     public static string ReadEmbeddedTextFile(string relativePath)
     {
         // Convert relative path to resource name
-        var resourceName = $"CleanArchitectureAssistant.Resources.Appdata.{relativePath.Replace("\\", ".").Replace("-","_")}";
+        var resourceName = $"CleanArchitectureAssistant.Resources.Appdata.{relativePath.Replace("\\", ".").Replace("-", "_")}";
 
         var assembly = Assembly.GetExecutingAssembly();
         using var stream = assembly.GetManifestResourceStream(resourceName);

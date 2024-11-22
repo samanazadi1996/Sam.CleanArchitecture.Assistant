@@ -21,7 +21,7 @@ public class ApplicationService
         };
         try
         {
-            var applicationPath = await GetApplicationPath();
+            var applicationPath = await CommonService.GetApplicationPath();
             if (string.IsNullOrEmpty(applicationPath))
                 return false;
 
@@ -44,21 +44,9 @@ public class ApplicationService
         return true;
     }
 
-    public static async Task<string> GetApplicationPath()
-    {
-        var projects = await VS.Solutions.GetAllProjectsAsync();
-
-        var applicationCsProj = projects.Select(p => p.FullPath).FirstOrDefault(p => p.EndsWith(".Application.csproj"));
-
-        if (string.IsNullOrEmpty(applicationCsProj))
-            return string.Empty;
-
-        return Directory.GetParent(applicationCsProj)?.FullName;
-    }
-
     public static async Task<List<string>> GetFeatures()
     {
-        var applicationPath = await GetApplicationPath();
+        var applicationPath = await CommonService.GetApplicationPath();
         if (string.IsNullOrEmpty(applicationPath))
             return [];
 

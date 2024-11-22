@@ -56,7 +56,7 @@ public class UseCaseData
     
         foreach (var item in result)
         {
-            string fileContent = ResourceHelper.ReadEmbeddedTextFile(item.Path);
+            string fileContent = EmbeddedResourceDataReader.ReadEmbeddedTextFile(item.Path);
 
             item.Content = fileContent
                 .Replace("FeatureName", featureName)

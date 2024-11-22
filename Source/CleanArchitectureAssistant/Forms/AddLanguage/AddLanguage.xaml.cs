@@ -18,8 +18,23 @@ public partial class AddLanguageWindowControl : UserControl
         await AddLanguageWindow.HideAsync();
     }
 
-    private void Execute(object sender, RoutedEventArgs e)
+    private async void Execute(object sender, RoutedEventArgs e)
     {
-        throw new NotImplementedException();
+        var culture = CultureComboBox.Text;
+        if (string.IsNullOrWhiteSpace(culture))
+        {
+            await VS.MessageBox.ShowAsync("Please select a Culture.");
+            return;
+        }
+
+        if (await LanguageService.CreateLanguage(culture))
+        {
+            await VS.MessageBox.ShowAsync("Language added successfully.");
+            CultureComboBox.Text = string.Empty;
+        }
+        else
+        {
+            await VS.MessageBox.ShowAsync("Failed to add Language. Please try again.");
+        }
     }
 }

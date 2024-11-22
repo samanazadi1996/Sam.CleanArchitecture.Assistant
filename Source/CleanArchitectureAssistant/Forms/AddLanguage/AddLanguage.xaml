@@ -18,11 +18,24 @@
 
             <StackPanel Margin="10,10,10,0">
                 <Label Content="Lang :" FontWeight="Bold"/>
-                <ComboBox MinHeight="30" IsEditable="True" Name="FeatureNameComboBox">
-                    <ComboBoxItem Content="Products"/>
-                    <ComboBoxItem Content="Orders"/>
+                <ComboBox MinHeight="30" IsEditable="True" Name="CultureComboBox">
+                    <ComboBoxItem Content="En"/>
+                    <ComboBoxItem Content="Fa"/>
+                    <ComboBoxItem Content="Ar"/>
+                    <ComboBoxItem Content="Ru"/>
+                    <ComboBoxItem Content="Ku"/>
                 </ComboBox>
             </StackPanel>
+
+            <!--<StackPanel Margin="10,10,10,0">
+                <Label Content="Set As Default :" FontWeight="Bold"/>
+                <CheckBox Name="SetAsDefaultCheckBox" MinHeight="30" Margin="10,0,0,0"></CheckBox>
+            </StackPanel>
+
+            <StackPanel Margin="10,10,10,0">
+                <Label Content="Use Google Translate for basicData:" FontWeight="Bold"/>
+                <CheckBox Name="UseGoogleTranslateCheckBox" MinHeight="30" Margin="10,0,0,0"></CheckBox>
+            </StackPanel>-->
 
 
 
