@@ -14,21 +14,22 @@ public class CommonService
     }
     public static async Task<string> GetResourcesPath()
     {
-        var projects = await VS.Solutions.GetAllProjectsAsync();
-
-        var csProj = projects.Select(p => p.FullPath)
-            .FirstOrDefault(p => p.EndsWith(".Infrastructure.Resources.csproj"));
-
-        if (string.IsNullOrEmpty(csProj))
-            return string.Empty;
-
-        return Directory.GetParent(csProj)?.FullName;
+        return await GetProjectPath("Infrastructure.Resources");
     }
     public static async Task<string> GetApplicationPath()
     {
+        return await GetProjectPath("Application");
+    }
+    public static async Task<string> GetEndpointPath()
+    {
+        return await GetProjectPath("WebApi");
+    }
+    public static async Task<string> GetProjectPath(string name)
+    {
         var projects = await VS.Solutions.GetAllProjectsAsync();
 
-        var applicationCsProj = projects.Select(p => p.FullPath).FirstOrDefault(p => p.EndsWith(".Application.csproj"));
+        var applicationCsProj = projects.Select(p => p.FullPath)
+            .FirstOrDefault(p => p.EndsWith($".{name}.csproj"));
 
         if (string.IsNullOrEmpty(applicationCsProj))
             return string.Empty;

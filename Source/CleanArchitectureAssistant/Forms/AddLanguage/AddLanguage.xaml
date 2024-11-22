@@ -17,7 +17,7 @@
         <StackPanel Orientation="Vertical">
 
             <StackPanel Margin="10,10,10,0">
-                <Label Content="Lang :" FontWeight="Bold"/>
+                <Label Content="Language :" FontWeight="Bold"/>
                 <ComboBox MinHeight="30" IsEditable="True" Name="CultureComboBox">
                     <ComboBoxItem Content="En"/>
                     <ComboBoxItem Content="Fa"/>
@@ -27,15 +27,27 @@
                 </ComboBox>
             </StackPanel>
 
-            <!--<StackPanel Margin="10,10,10,0">
+            <StackPanel Margin="10,10,10,0">
                 <Label Content="Set As Default :" FontWeight="Bold"/>
                 <CheckBox Name="SetAsDefaultCheckBox" MinHeight="30" Margin="10,0,0,0"></CheckBox>
             </StackPanel>
 
             <StackPanel Margin="10,10,10,0">
-                <Label Content="Use Google Translate for basicData:" FontWeight="Bold"/>
-                <CheckBox Name="UseGoogleTranslateCheckBox" MinHeight="30" Margin="10,0,0,0"></CheckBox>
-            </StackPanel>-->
+                <Label Content="Auto Translate :" FontWeight="Bold"/>
+                <CheckBox Name="UseGoogleTranslateCheckBox" MinHeight="30" Margin="10,0,0,0"
+                          Checked="UseGoogleTranslateCheckBox_OnChecked"
+                          Unchecked="UseGoogleTranslateCheckBox_OnUnchecked"></CheckBox>
+            </StackPanel>
+            <StackPanel Margin="10,10,10,0" Name="UseGoogleTranslateBaseStackPanel">
+                <Label Content="Base From :" FontWeight="Bold"/>
+                <ComboBox MinHeight="30" Name="UseGoogleTranslateBaseComboBox">
+                    <ComboBoxItem Content="En"/>
+                    <ComboBoxItem Content="Fa"/>
+                    <ComboBoxItem Content="Ar"/>
+                    <ComboBoxItem Content="Ru"/>
+                    <ComboBoxItem Content="Ku"/>
+                </ComboBox>
+            </StackPanel>
 
 
 
