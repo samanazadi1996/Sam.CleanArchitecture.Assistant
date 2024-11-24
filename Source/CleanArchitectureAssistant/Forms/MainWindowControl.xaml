@@ -23,6 +23,7 @@
 
             <Button Content="Add Entity"
                     Height="30" FontWeight="Bold"
+                    Click="ShowAddEntityWindow"
                     Margin="10,10,10,0" />
 
             <Button Content="Add Language"

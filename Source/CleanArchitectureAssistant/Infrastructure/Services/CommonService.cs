@@ -24,6 +24,10 @@ public class CommonService
     {
         return await GetProjectPath("WebApi");
     }
+    public static async Task<string> GetDomainPath()
+    {
+        return await GetProjectPath("Domain");
+    }
     public static async Task<string> GetProjectPath(string name)
     {
         var projects = await VS.Solutions.GetAllProjectsAsync();

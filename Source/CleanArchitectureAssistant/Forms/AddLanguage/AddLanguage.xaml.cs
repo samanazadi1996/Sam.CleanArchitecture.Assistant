@@ -34,7 +34,7 @@ public partial class AddLanguageWindowControl : UserControl
 
         if (string.IsNullOrWhiteSpace(culture))
         {
-            await VS.MessageBox.ShowAsync("Please select a Culture.");
+            await VS.MessageBox.ShowAsync("Please select a valid culture from the dropdown list.");
             return;
         }
 
@@ -45,7 +45,7 @@ public partial class AddLanguageWindowControl : UserControl
             baseCulture = UseGoogleTranslateBaseComboBox.Text;
             if (string.IsNullOrWhiteSpace(baseCulture))
             {
-                await VS.MessageBox.ShowAsync("Please select a Base Culture For Clone.");
+                await VS.MessageBox.ShowAsync("Please select a base culture to clone.");
                 return;
             }
         }
@@ -54,12 +54,12 @@ public partial class AddLanguageWindowControl : UserControl
 
         if (await LanguageService.CreateLanguage(culture, setAsDefault, baseCulture))
         {
-            await VS.MessageBox.ShowAsync("Language added successfully.");
+            await VS.MessageBox.ShowAsync("The language has been added successfully.");
             CultureComboBox.Text = string.Empty;
         }
         else
         {
-            await VS.MessageBox.ShowAsync("Failed to add Language. Please try again.");
+            await VS.MessageBox.ShowAsync("An error occurred while adding the language. Please try again.");
         }
     }
 

@@ -18,4 +18,8 @@ public partial class MainWindowControl : UserControl
     {
         await Forms.AddLanguage.AddLanguageWindow.ShowAsync();
     }
+    private async void ShowAddEntityWindow(object sender, RoutedEventArgs e)
+    {
+        await Forms.AddEntity.AddEntityWindow.ShowAsync();
+    }
 }

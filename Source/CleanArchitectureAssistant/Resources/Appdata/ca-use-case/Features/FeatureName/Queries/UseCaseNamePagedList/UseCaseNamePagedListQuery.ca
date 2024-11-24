@@ -1,6 +1,7 @@
 ﻿using CleanArchitecture.Application.Wrappers;
 using CleanArchitecture.Application.Parameters;
 using MediatR;
+using System;
 
 namespace CleanArchitecture.Application.Features.FeatureName.Queries.UseCaseNamePagedList
 {
