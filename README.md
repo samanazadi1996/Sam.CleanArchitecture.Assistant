@@ -5,7 +5,7 @@
 ## Key Features
 
 - ✔**Quick Use Case Creation**: Automatically generate classes and interfaces for use cases following standard patterns, enabling developers to create new use cases effortlessly.
-- ❌**Entity Generation**: Easily create entities with Clean Architecture principles, optimizing the data model design process.
+- ✔**Entity Generation**: Easily create entities with Clean Architecture principles, optimizing the data model design process.
 - ✔**Add New Languages**: Seamlessly add new languages to support multi-language projects without complex configuration.
 - ❌**Migration Management**: Directly add new migrations to the project through Visual Studio, simplifying the database update process.
 
