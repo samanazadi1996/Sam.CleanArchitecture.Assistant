@@ -84,4 +84,10 @@ public partial class AddUseCaseWindowControl : UserControl
             await VS.MessageBox.ShowAsync("An error occurred while creating the use case. Please try again.");
         }
     }
+
+    private async void Refresh_OnClick(object sender, RoutedEventArgs e)
+    {
+        await LoadFeatures();
+
+    }
 }

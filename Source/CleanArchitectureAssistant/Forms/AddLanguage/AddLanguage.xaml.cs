@@ -95,6 +95,7 @@ public partial class AddLanguageWindowControl : UserControl
 
 
         CultureComboBox.Items.Clear();
+        _languages.Clear();
         foreach (var culture in cultures)
         {
             var title = $"{culture.DisplayName} ({culture.Name})";
@@ -106,5 +107,4 @@ public partial class AddLanguageWindowControl : UserControl
             });
         }
     }
-
 }

@@ -1,29 +1,25 @@
 ﻿using CleanArchitectureAssistant.Infrastructure.Data;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace CleanArchitectureAssistant.Infrastructure.Services;
 
 public class EfService
 {
-    public static async Task<bool> AddMigration(string dataLayer, string startUpProject, string migrationName)
+    public static async Task<bool> AddMigration(string dataLayer, string startUpProject, string migrationName, string context)
     {
         try
         {
-            //var domainPath = await CommonService.GetDomainPath();
-            //if (string.IsNullOrEmpty(domainPath))
-            //    return false;
+            var classLibs =await CommonService.GetProjectsPath();
+
+            var startUp = classLibs.FirstOrDefault(p => p.Contains(startUpProject));
+            var data = classLibs.FirstOrDefault(p => p.Contains(dataLayer));
+
+            var cli = $" ef migrations add {migrationName} --context {context} --project \"{data}\" --startup-project \"{startUp}\"";
 
 
-            //var dir = Path.Combine(domainPath, domainname, "Entities");
-            //if (!Directory.Exists(dir))
-            //    Directory.CreateDirectory(dir);
-
-
-            //var file = EntityData.GetEntity(await CommonService.GetSolutionName(), domainname, entityName, baseType, keyProperyTypeComboBox);
-
-            //File.WriteAllText(Path.Combine(dir, file.Name), file.Content);
-
+            CmdService.Shell("dotnet", cli);
         }
         catch
         {

@@ -19,10 +19,18 @@
                 <!-- Buttons with simple text -->
                 <Button Name="RefreshButton" Content="Refresh" Click="Refresh_OnClick" ToolTip="Reload Libraries"  Margin="3" Padding="3" Background="Gray"/>
             </ToolBar>
-            
+
             <StackPanel Margin="10,10,10,0">
                 <Label Content="Library (Data Layer):" FontWeight="Bold"/>
-                <ComboBox MinHeight="30" Name="LibraryNameComboBox">
+                <ComboBox MinHeight="30" Name="LibraryNameComboBox" 
+                          SelectionChanged="LibraryNameComboBox_OnSelectionChanged">
+                </ComboBox>
+            </StackPanel>
+
+            <StackPanel Margin="10,10,10,0">
+                <Label Content="Context Name:" FontWeight="Bold" />
+                <ComboBox MinHeight="30"
+                          Name="ContextNameComboBox">
                 </ComboBox>
             </StackPanel>
 
