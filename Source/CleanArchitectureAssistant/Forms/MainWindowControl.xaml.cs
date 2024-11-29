@@ -27,4 +27,9 @@ public partial class MainWindowControl : UserControl
     {
         await Forms.AddMigration.AddMigrationWindow.ShowAsync();
     }
+
+    private void ShowAddRepositoryWindow(object sender, RoutedEventArgs e)
+    {
+        throw new NotImplementedException();
+    }
 }

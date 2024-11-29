@@ -35,7 +35,7 @@ public partial class AddEntityWindowControl : UserControl
             return;
         }
 
-        if (await DomainService.CreateEntity(domainName, entityName, BaseTypeComboBox.Text, KeyProperyTypeComboBox.Text))
+        if (await DomainService.CreateEntity(domainName, entityName, BaseTypeComboBox.Text, KeyPropertyTypeComboBox.Text))
         {
             await VS.MessageBox.ShowAsync("The entity was successfully created.");
             EntityNameTextBox.Text = string.Empty;

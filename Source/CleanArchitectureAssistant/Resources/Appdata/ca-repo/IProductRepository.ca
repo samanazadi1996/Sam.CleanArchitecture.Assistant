@@ -1,0 +1,7 @@
+using CleanArchitecture.Domain.Products.Entities;
+
+namespace CleanArchitecture.Application.Interfaces.Repositories;
+
+public interface IProductRepository : IGenericRepository<Product>
+{
+}

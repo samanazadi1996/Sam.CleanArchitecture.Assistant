@@ -1,0 +1,10 @@
+using CleanArchitecture.Application.Interfaces.Repositories;
+using CleanArchitecture.Domain.Products.Entities;
+using CleanArchitecture.Infrastructure.Persistence.Contexts;
+
+namespace CleanArchitecture.Infrastructure.Persistence.Repositories;
+
+public class ProductRepository(ApplicationDbContext dbContext) : GenericRepository<Product>(dbContext), IProductRepository
+{
+
+}

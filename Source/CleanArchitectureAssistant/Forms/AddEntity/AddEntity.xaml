@@ -37,7 +37,7 @@
             
             <StackPanel Margin="10,10,10,0">
                 <Label Content="Key Property Type:" FontWeight="Bold"/>
-                <ComboBox MinHeight="30" Name="KeyProperyTypeComboBox" SelectedIndex="0">
+                <ComboBox MinHeight="30" Name="KeyPropertyTypeComboBox" SelectedIndex="0">
                     <ComboBoxItem Content="default" />
                     <ComboBoxItem Content="int" />
                     <ComboBoxItem Content="long" />

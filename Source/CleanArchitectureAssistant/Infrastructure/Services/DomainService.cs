@@ -6,7 +6,7 @@ namespace CleanArchitectureAssistant.Infrastructure.Services;
 
 public class DomainService
 {
-    public static async Task<bool> CreateEntity(string domainname, string entityName, string baseType, string keyProperyTypeComboBox)
+    public static async Task<bool> CreateEntity(string domainName, string entityName, string baseType, string keyPropertyTypeComboBox)
     {
         try
         {
@@ -15,12 +15,12 @@ public class DomainService
                 return false;
 
 
-            var dir = Path.Combine(domainPath, domainname, "Entities");
+            var dir = Path.Combine(domainPath, domainName, "Entities");
             if (!Directory.Exists(dir))
                 Directory.CreateDirectory(dir);
 
 
-            var file = EntityData.GetEntity(await CommonService.GetSolutionName(), domainname, entityName, baseType, keyProperyTypeComboBox);
+            var file = EntityData.GetEntity(await CommonService.GetSolutionName(), domainName, entityName, baseType, keyPropertyTypeComboBox);
 
             File.WriteAllText(Path.Combine(dir, file.Name), file.Content);
 

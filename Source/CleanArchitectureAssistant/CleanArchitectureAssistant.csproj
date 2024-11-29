@@ -122,6 +122,12 @@
     <EmbeddedResource Include="Resources\Appdata\ca-resource\ProjectResources\ResourceMessages.Culture.ca">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Appdata\ca-repo\IProductRepository.ca">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Appdata\ca-repo\ProductRepository.ca">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
       <Generator>VsixManifestGenerator</Generator>

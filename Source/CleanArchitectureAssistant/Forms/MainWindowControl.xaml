@@ -36,6 +36,11 @@
                     Click="ShowAddMigrationWindow"
                     Margin="10,10,10,0" />
 
+            <Button Content="Add Repository"
+                    Height="30" FontWeight="Bold"
+                    Click="ShowAddRepositoryWindow"
+                    Margin="10,10,10,0" />
+
 
         </StackPanel>
     </Grid>
