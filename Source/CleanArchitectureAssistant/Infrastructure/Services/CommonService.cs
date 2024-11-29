@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -12,34 +13,45 @@ public class CommonService
 
         return slnName?.Replace(".sln", "");
     }
+    public static async Task<List<string>> GetProjectsPath()
+    {
+        return await GetProjectsPath(".csproj");
+    } 
     public static async Task<string> GetResourcesPath()
     {
-        return await GetProjectPath("Infrastructure.Resources");
+        return await GetProjectPath("Infrastructure.Resources.csproj");
     }
     public static async Task<string> GetApplicationPath()
     {
-        return await GetProjectPath("Application");
+        return await GetProjectPath("Application.csproj");
     }
     public static async Task<string> GetEndpointPath()
     {
-        return await GetProjectPath("WebApi");
+        return await GetProjectPath("WebApi.csproj");
     }
     public static async Task<string> GetDomainPath()
     {
-        return await GetProjectPath("Domain");
+        return await GetProjectPath("Domain.csproj");
     }
     public static async Task<string> GetProjectPath(string name)
     {
         var projects = await VS.Solutions.GetAllProjectsAsync();
 
         var applicationCsProj = projects.Select(p => p.FullPath)
-            .FirstOrDefault(p => p.EndsWith($".{name}.csproj"));
+            .FirstOrDefault(p => p.Contains(name));
 
         if (string.IsNullOrEmpty(applicationCsProj))
             return string.Empty;
 
         return Directory.GetParent(applicationCsProj)?.FullName;
     }
+    public static async Task<List<string>> GetProjectsPath(string name)
+    {
+        var projects = await VS.Solutions.GetAllProjectsAsync();
 
+        var applicationCsProj = projects.Select(p => p.FullPath)
+            .Where(p => p.Contains(name)).ToList();
 
+        return !applicationCsProj.Any() ? [] : applicationCsProj.Select(p => Directory.GetParent(p)?.FullName).ToList();
+    }
 }

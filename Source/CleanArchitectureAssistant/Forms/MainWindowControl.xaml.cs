@@ -22,4 +22,9 @@ public partial class MainWindowControl : UserControl
     {
         await Forms.AddEntity.AddEntityWindow.ShowAsync();
     }
+
+    private async void ShowAddMigrationWindow(object sender, RoutedEventArgs e)
+    {
+        await Forms.AddMigration.AddMigrationWindow.ShowAsync();
+    }
 }

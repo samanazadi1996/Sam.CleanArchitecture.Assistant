@@ -8,6 +8,7 @@ using CleanArchitectureAssistant.Forms.AddUseCase;
 using System.Runtime.InteropServices;
 using System.Threading;
 using CleanArchitectureAssistant.Forms;
+using CleanArchitectureAssistant.Forms.AddMigration;
 
 namespace CleanArchitectureAssistant;
 
@@ -17,6 +18,7 @@ namespace CleanArchitectureAssistant;
 [ProvideToolWindow(typeof(AddUseCaseWindow.Pane), Style = VsDockStyle.Tabbed, Window = WindowGuids.SolutionExplorer)]
 [ProvideToolWindow(typeof(AddLanguageWindow.Pane), Style = VsDockStyle.Tabbed, Window = WindowGuids.SolutionExplorer)]
 [ProvideToolWindow(typeof(AddEntityWindow.Pane), Style = VsDockStyle.Tabbed, Window = WindowGuids.SolutionExplorer)]
+[ProvideToolWindow(typeof(AddMigrationWindow.Pane), Style = VsDockStyle.Tabbed, Window = WindowGuids.SolutionExplorer)]
 [ProvideMenuResource("Menus.ctmenu", 1)]
 [Guid(PackageGuids.CleanArchitectureAssistantString)]
 public sealed class CleanArchitectureAssistantPackage : ToolkitPackage

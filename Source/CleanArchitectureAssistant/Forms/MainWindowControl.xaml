@@ -33,6 +33,7 @@
 
             <Button Content="Add Migration"
                     Height="30" FontWeight="Bold"
+                    Click="ShowAddMigrationWindow"
                     Margin="10,10,10,0" />
 
 

@@ -45,6 +45,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Forms\AddMigration\AddMigration.cs" />
+    <Compile Include="Forms\AddMigration\AddMigration.xaml.cs">
+      <DependentUpon>AddMigration.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddEntity\AddEntity.cs" />
     <Compile Include="Forms\AddEntity\AddEntity.xaml.cs">
       <DependentUpon>AddEntity.xaml</DependentUpon>
@@ -68,6 +72,7 @@
     <Compile Include="Infrastructure\Enums\UseCaseType.cs" />
     <Compile Include="Infrastructure\Services\ApplicationService.cs" />
     <Compile Include="Infrastructure\Services\CommonService.cs" />
+    <Compile Include="Infrastructure\Services\EfService.cs" />
     <Compile Include="Infrastructure\Services\GoogleApiService.cs" />
     <Compile Include="Infrastructure\Services\DomainService.cs" />
     <Compile Include="Infrastructure\Services\LanguageService.cs" />
@@ -86,6 +91,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\Icons\refresh.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Appdata\ca-use-case\Features\FeatureName\Commands\UseCaseName\UseCaseNameCommand.ca">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -137,6 +145,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Forms\AddLanguage\AddLanguage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\AddMigration\AddMigration.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

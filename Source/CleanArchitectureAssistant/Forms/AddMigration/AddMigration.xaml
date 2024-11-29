@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="CleanArchitectureAssistant.Forms.AddMigration.AddMigrationWindowControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:imaging="clr-namespace:Microsoft.VisualStudio.Imaging;assembly=Microsoft.VisualStudio.Imaging"
+             xmlns:theming="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.VisualStudio.Imaging"
+             xmlns:util="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.VisualStudio.Utilities"
+             xmlns:catalog="clr-namespace:Microsoft.VisualStudio.Imaging;assembly=Microsoft.VisualStudio.ImageCatalog"
+             xmlns:toolkit="clr-namespace:Community.VisualStudio.Toolkit;assembly=Community.VisualStudio.Toolkit"
+             toolkit:Themes.UseVsTheme="True"
+             mc:Ignorable="d"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             Name="AddMigration">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <ToolBar DockPanel.Dock="Top" Background="Transparent" >
+                <!-- Buttons with simple text -->
+                <Button Name="RefreshButton" Content="Refresh" Click="Refresh_OnClick" ToolTip="Reload Libraries"  Margin="3" Padding="3" Background="Gray"/>
+            </ToolBar>
+            
+            <StackPanel Margin="10,10,10,0">
+                <Label Content="Library (Data Layer):" FontWeight="Bold"/>
+                <ComboBox MinHeight="30" Name="LibraryNameComboBox">
+                </ComboBox>
+            </StackPanel>
+
+            <StackPanel Margin="10,10,10,0">
+                <Label Content="Startup Project:" FontWeight="Bold"/>
+                <ComboBox MinHeight="30" Name="StartupProjectComboBox">
+                </ComboBox>
+            </StackPanel>
+
+            <StackPanel Margin="10,10,10,0">
+                <Label Content="Migration Name:" FontWeight="Bold"/>
+                <TextBox FontWeight="Normal" MinHeight="30" Name="MigrationNameTextBox"/>
+            </StackPanel>
+
+            <StackPanel Margin="10,20,10,0" HorizontalAlignment="Right">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button MinHeight="30" Width="Auto" Content="Execute" Grid.Column="1" Click="Execute"/>
+                    <Button MinHeight="30" Width="Auto" Content="Close" Grid.Column="0" Margin="0,0,10,0" Click="CloseForm"/>
+                </Grid>
+            </StackPanel>
+
+
+        </StackPanel>
+    </Grid>
+</UserControl>
