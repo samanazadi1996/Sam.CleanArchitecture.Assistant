@@ -11,14 +11,11 @@
              toolkit:Themes.UseVsTheme="True"
              mc:Ignorable="d"
              d:DesignHeight="300"
+             Loaded="UserControl_Loaded"
              d:DesignWidth="300"
              Name="AddUseCase">
     <Grid>
         <StackPanel Orientation="Vertical">
-            <ToolBar DockPanel.Dock="Top" Background="Transparent" >
-                <!-- Buttons with simple text -->
-                <Button Name="RefreshButton" Content="Refresh" Click="Refresh_OnClick" ToolTip="Reload Libraries"  Margin="3" Padding="3" Background="Gray"/>
-            </ToolBar>
 
             <StackPanel Margin="10,10,10,0">
                 <Label Content="Feature Name:" FontWeight="Bold"/>

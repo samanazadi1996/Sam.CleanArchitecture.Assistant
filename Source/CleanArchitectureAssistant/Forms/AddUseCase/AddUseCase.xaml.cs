@@ -1,7 +1,7 @@
-﻿using CleanArchitectureAssistant.Infrastructure.Services;
-using System.Windows.Controls;
-using CleanArchitectureAssistant.Infrastructure.Enums;
+﻿using CleanArchitectureAssistant.Infrastructure.Enums;
+using CleanArchitectureAssistant.Infrastructure.Services;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace CleanArchitectureAssistant.Forms.AddUseCase;
 
@@ -10,13 +10,18 @@ public partial class AddUseCaseWindowControl : UserControl
     public AddUseCaseWindowControl()
     {
         InitializeComponent();
-        LoadFeatures();
     }
 
     private async void CloseForm(object sender, System.Windows.RoutedEventArgs e)
     {
         await AddUseCaseWindow.HideAsync();
     }
+
+    private async void UserControl_Loaded(object sender, RoutedEventArgs e)
+    {
+        await LoadFeatures();
+    }
+
 
     private async Task LoadFeatures()
     {
@@ -83,11 +88,5 @@ public partial class AddUseCaseWindowControl : UserControl
         {
             await VS.MessageBox.ShowAsync("An error occurred while creating the use case. Please try again.");
         }
-    }
-
-    private async void Refresh_OnClick(object sender, RoutedEventArgs e)
-    {
-        await LoadFeatures();
-
     }
 }

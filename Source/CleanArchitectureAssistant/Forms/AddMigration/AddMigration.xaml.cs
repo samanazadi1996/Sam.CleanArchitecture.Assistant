@@ -1,13 +1,11 @@
-﻿using System.IO;
+﻿using CleanArchitectureAssistant.Infrastructure.Services;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System.IO;
 using System.Linq;
-using CleanArchitectureAssistant.Infrastructure.Services;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using Microsoft.CodeAnalysis.CSharp;
 using SelectionChangedEventArgs = System.Windows.Controls.SelectionChangedEventArgs;
-using static System.Net.Mime.MediaTypeNames;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace CleanArchitectureAssistant.Forms.AddMigration;
 
@@ -16,12 +14,15 @@ public partial class AddMigrationWindowControl : UserControl
     public AddMigrationWindowControl()
     {
         InitializeComponent();
-        LoadData();
     }
 
     private async void CloseForm(object sender, System.Windows.RoutedEventArgs e)
     {
         await AddMigrationWindow.HideAsync();
+    }
+    private async void UserControl_Loaded(object sender, RoutedEventArgs e)
+    {
+        await LoadData();
     }
 
     private async void Execute(object sender, RoutedEventArgs e)
@@ -88,12 +89,6 @@ public partial class AddMigrationWindowControl : UserControl
             });
         }
     }
-
-    private async void Refresh_OnClick(object sender, RoutedEventArgs e)
-    {
-        await LoadData();
-    }
-
 
     private async void LibraryNameComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
     {

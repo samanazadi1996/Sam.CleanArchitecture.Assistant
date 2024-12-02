@@ -1,7 +1,5 @@
-﻿using CleanArchitectureAssistant.Infrastructure.Enums;
-using CleanArchitectureAssistant.Infrastructure.Services;
+﻿using CleanArchitectureAssistant.Infrastructure.Services;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -18,6 +16,22 @@ public partial class AddEntityWindowControl : UserControl
     private async void CloseForm(object sender, System.Windows.RoutedEventArgs e)
     {
         await AddEntityWindow.HideAsync();
+    }
+    private async void UserControl_Loaded(object sender, RoutedEventArgs e)
+    {
+        List<string> ignore = ["bin", "obj", "Common"];
+        var dirs = await DomainService.GetDonmains();
+
+        DomainNameComboBox.Items.Clear();
+        foreach (var item in dirs.Where(s => !ignore.Contains(s)))
+        {
+            DomainNameComboBox.Items.Add(new ComboBoxItem
+            {
+                Content = item
+            });
+
+        }
+
     }
 
     private async void Execute(object sender, RoutedEventArgs e)
