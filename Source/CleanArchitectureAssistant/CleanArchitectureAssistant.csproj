@@ -75,6 +75,7 @@
     <Compile Include="Infrastructure\Services\CmdService.cs" />
     <Compile Include="Infrastructure\Services\CommonService.cs" />
     <Compile Include="Infrastructure\Services\EfService.cs" />
+    <Compile Include="Infrastructure\Services\ExternalService.cs" />
     <Compile Include="Infrastructure\Services\GoogleApiService.cs" />
     <Compile Include="Infrastructure\Services\DomainService.cs" />
     <Compile Include="Infrastructure\Services\LanguageService.cs" />

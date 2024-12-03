@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Navigation;
 
 namespace CleanArchitectureAssistant.Infrastructure.Services;
 
@@ -55,4 +56,5 @@ public class CommonService
 
         return !applicationCsProj.Any() ? [] : applicationCsProj.Select(p => Directory.GetParent(p)?.FullName).ToList();
     }
+
 }
