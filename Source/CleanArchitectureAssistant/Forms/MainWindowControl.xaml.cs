@@ -28,8 +28,8 @@ public partial class MainWindowControl : UserControl
         await Forms.AddMigration.AddMigrationWindow.ShowAsync();
     }
 
-    private void ShowAddRepositoryWindow(object sender, RoutedEventArgs e)
+    private async void ShowAddRepositoryWindow(object sender, RoutedEventArgs e)
     {
-        throw new NotImplementedException();
+        await Forms.AddRepository.AddRepositoryWindow.ShowAsync();
     }
 }

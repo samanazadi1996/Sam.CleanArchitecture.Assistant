@@ -4,9 +4,9 @@ namespace CleanArchitectureAssistant.Infrastructure.Data;
 
 public class RepositoryData
 {
-    public static FileDto GetInterface(string solutionName, string entityName)
+    public static FileDto GetInterface(string solutionName, EntityDto entity)
     {
-        var result = new FileDto($"I{entityName}Repository.cs")
+        var result = new FileDto($"I{entity.ClassName}Repository.cs")
         {
             Path = "ca-repo\\IProductRepository.ca"
         };
@@ -15,15 +15,16 @@ public class RepositoryData
 
 
         result.Content = fileContent
-            .Replace("Product", entityName)
+            .Replace("CleanArchitecture.Domain.Products.Entities", entity.Namespace)
+            .Replace("Product", entity.ClassName)
             .Replace("CleanArchitecture.", solutionName + ".");
 
         return result;
 
     }
-    public static FileDto GetImplementation(string solutionName, string entityName)
+    public static FileDto GetImplementation(string solutionName, EntityDto entity)
     {
-        var result = new FileDto($"{entityName}Repository.cs")
+        var result = new FileDto($"{entity.ClassName}Repository.cs")
         {
             Path = "ca-repo\\ProductRepository.ca"
         };
@@ -32,7 +33,8 @@ public class RepositoryData
 
 
         result.Content = fileContent
-            .Replace("Product", entityName)
+            .Replace("Product", entity.ClassName)
+            .Replace("CleanArchitecture.Domain.Products.Entities", entity.Namespace)
             .Replace("CleanArchitecture.", solutionName + ".");
 
         return result;

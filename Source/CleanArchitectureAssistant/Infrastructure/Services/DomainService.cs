@@ -1,4 +1,7 @@
 ﻿using CleanArchitectureAssistant.Infrastructure.Data;
+using CleanArchitectureAssistant.Infrastructure.DTOs;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -46,4 +49,61 @@ public class DomainService
             .Select(Path.GetFileName)
             .ToList();
     }
+    public static async Task<List<EntityDto>> GetEntities()
+    {
+        var bt = new List<string> { "BaseEntity", "AuditableBaseEntity" };
+        var result = new List<EntityDto>();
+
+        try
+        {
+            var path = await CommonService.GetDomainPath();
+
+            if (path != null)
+            {
+                var filePaths = Directory.GetFiles(path, "*.cs", SearchOption.AllDirectories);
+
+                foreach (var filePath in filePaths)
+                {
+                    var fileContent = File.ReadAllText(filePath);
+
+                    // Parse the file content using Roslyn
+                    var syntaxTree = CSharpSyntaxTree.ParseText(fileContent);
+                    var root = await syntaxTree.GetRootAsync();
+
+                    // Find all class declarations in the file
+                    var classDeclarations = root.DescendantNodes().OfType<ClassDeclarationSyntax>();
+
+                    foreach (var classDeclaration in classDeclarations)
+                    {
+                        // Check if the class inherits from any of the ignored base classes
+                        var baseTypes = classDeclaration.BaseList?.Types;
+
+                        if (baseTypes != null && baseTypes.Value.All(b => bt.Contains(b.Type.ToString())))
+                        {
+                            // Extract the namespace using Roslyn
+                            var namespaceDeclaration = classDeclaration.Ancestors()
+                                .OfType<NamespaceDeclarationSyntax>()
+                                .FirstOrDefault();
+
+                            var namespaceName = namespaceDeclaration?.Name.ToString() ?? "UnknownNamespace";
+
+                            result.Add(new EntityDto
+                            {
+                                ClassName = classDeclaration.Identifier.Text,
+                                Namespace = namespaceName
+                            });
+                        }
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            // Log or handle the exception appropriately
+            Console.WriteLine($"An error occurred: {ex.Message}");
+        }
+
+        return result;
+    }
+
 }

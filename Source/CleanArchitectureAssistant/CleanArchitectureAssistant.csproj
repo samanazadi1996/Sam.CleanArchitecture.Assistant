@@ -45,6 +45,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Forms\AddRepository\AddRepository.cs" />
+    <Compile Include="Forms\AddRepository\AddRepository.xaml.cs">
+      <DependentUpon>AddRepository.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddMigration\AddMigration.cs" />
     <Compile Include="Forms\AddMigration\AddMigration.xaml.cs">
       <DependentUpon>AddMigration.xaml</DependentUpon>
@@ -149,6 +153,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Forms\MainWindow.cs" />
+    <Page Include="Forms\AddRepository\AddRepository.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Forms\AddEntity\AddEntity.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

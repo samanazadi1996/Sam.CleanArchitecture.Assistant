@@ -55,4 +55,9 @@ public class CommonService
 
         return !applicationCsProj.Any() ? [] : applicationCsProj.Select(p => Directory.GetParent(p)?.FullName).ToList();
     }
+
+    internal static async Task<string> GetPersistencePath()
+    {
+        return await GetProjectPath("Infrastructure.Persistence.csproj");
+    }
 }
