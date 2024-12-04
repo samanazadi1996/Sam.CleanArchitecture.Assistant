@@ -1,5 +1,7 @@
-﻿using System.Windows;
+﻿using CleanArchitectureAssistant.Infrastructure.Services;
+using System.Windows;
 using System.Windows.Controls;
+using static CleanArchitectureAssistant.Infrastructure.Services.CommonService;
 
 namespace CleanArchitectureAssistant.Forms;
 
@@ -31,5 +33,10 @@ public partial class MainWindowControl : UserControl
     private async void ShowAddRepositoryWindow(object sender, RoutedEventArgs e)
     {
         await Forms.AddRepository.AddRepositoryWindow.ShowAsync();
+    }
+
+    private void AddIssues_OnClick(object sender, RoutedEventArgs e)
+    {
+        ExternalService.NavigateToUrl("https://github.com/samanazadi1996/Sam.CleanArchitecture.Assistant/issues");
     }
 }
