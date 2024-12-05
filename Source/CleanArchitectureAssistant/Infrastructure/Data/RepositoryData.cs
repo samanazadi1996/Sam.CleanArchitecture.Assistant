@@ -13,9 +13,11 @@ public class RepositoryData
 
         var fileContent = EmbeddedResourceDataReader.ReadEmbeddedTextFile(result.Path);
 
+        var nss = entity.Namespace.Split('.');
 
         result.Content = fileContent
             .Replace("CleanArchitecture.Domain.Products.Entities", entity.Namespace)
+            .Replace("Domain.Products", $"{nss[1]}.{nss[2]}")
             .Replace("Product", entity.ClassName)
             .Replace("CleanArchitecture.", solutionName + ".");
 
@@ -31,10 +33,12 @@ public class RepositoryData
 
         var fileContent = EmbeddedResourceDataReader.ReadEmbeddedTextFile(result.Path);
 
+        var nss = entity.Namespace.Split('.');
 
         result.Content = fileContent
-            .Replace("Product", entity.ClassName)
             .Replace("CleanArchitecture.Domain.Products.Entities", entity.Namespace)
+            .Replace("Domain.Products", $"{nss[1]}.{nss[2]}")
+            .Replace("Product", entity.ClassName)
             .Replace("CleanArchitecture.", solutionName + ".");
 
         return result;
