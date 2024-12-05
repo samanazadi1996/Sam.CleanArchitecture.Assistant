@@ -1,7 +1,6 @@
 ﻿using CleanArchitectureAssistant.Infrastructure.Services;
 using System.Windows;
 using System.Windows.Controls;
-using static CleanArchitectureAssistant.Infrastructure.Services.CommonService;
 
 namespace CleanArchitectureAssistant.Forms;
 

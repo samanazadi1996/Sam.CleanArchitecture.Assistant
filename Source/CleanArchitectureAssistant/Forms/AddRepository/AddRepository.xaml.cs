@@ -1,8 +1,5 @@
 ﻿using CleanArchitectureAssistant.Infrastructure.Services;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.CodeAnalysis.CSharp;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;

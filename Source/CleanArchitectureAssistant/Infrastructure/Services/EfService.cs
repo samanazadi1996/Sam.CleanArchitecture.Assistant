@@ -1,9 +1,5 @@
-﻿
-using CleanArchitectureAssistant.Infrastructure.Data;
-using System.IO;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.VisualStudio.OLE.Interop;
 
 namespace CleanArchitectureAssistant.Infrastructure.Services;
 
