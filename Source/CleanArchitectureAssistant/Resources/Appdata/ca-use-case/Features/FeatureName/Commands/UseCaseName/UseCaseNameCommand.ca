@@ -2,10 +2,9 @@
 using MediatR;
 using System;
 
-namespace CleanArchitecture.Application.Features.FeatureName.Commands.UseCaseName
+namespace CleanArchitecture.Application.Features.FeatureName.Commands.UseCaseName;
+
+public class UseCaseNameCommand : IRequest<BaseResult<object>>
 {
-    public class UseCaseNameCommand : IRequest<BaseResult<object>>
-    {
-        public object MyProperty { get; set; }
-    }
+    public object MyProperty { get; set; }
 }

@@ -4,15 +4,14 @@ using System.Threading;
 using System.Threading.Tasks;
 using System;
 
-namespace CleanArchitecture.Application.Features.FeatureName.Queries.UseCaseName
-{
-    public class UseCaseNameQueryHandler : IRequestHandler<UseCaseNameQuery, BaseResult<object>>
-    {
-        public async Task<BaseResult<object>> Handle(UseCaseNameQuery request, CancellationToken cancellationToken)
-        {
-            // Handler
+namespace CleanArchitecture.Application.Features.FeatureName.Queries.UseCaseName;
 
-            return request.MyProperty;
-        }
+public class UseCaseNameQueryHandler : IRequestHandler<UseCaseNameQuery, BaseResult<object>>
+{
+    public async Task<BaseResult<object>> Handle(UseCaseNameQuery request, CancellationToken cancellationToken)
+    {
+        // Handler
+
+        return request.MyProperty;
     }
 }

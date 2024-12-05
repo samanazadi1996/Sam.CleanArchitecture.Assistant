@@ -3,10 +3,9 @@ using CleanArchitecture.Application.Parameters;
 using MediatR;
 using System;
 
-namespace CleanArchitecture.Application.Features.FeatureName.Queries.UseCaseNamePagedList
+namespace CleanArchitecture.Application.Features.FeatureName.Queries.UseCaseNamePagedList;
+
+public class UseCaseNamePagedListQuery : PaginationRequestParameter, IRequest<PagedResponse<object>>
 {
-    public class UseCaseNamePagedListQuery : PaginationRequestParameter, IRequest<PagedResponse<object>>
-    {
-        public object MyProperty { get; set; }
-    }
+    public object MyProperty { get; set; }
 }

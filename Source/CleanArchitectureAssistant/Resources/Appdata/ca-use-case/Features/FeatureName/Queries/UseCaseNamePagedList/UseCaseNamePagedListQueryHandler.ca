@@ -6,18 +6,17 @@ using CleanArchitecture.Application.DTOs;
 using CleanArchitecture.Application.Wrappers;
 using System;
 
-namespace CleanArchitecture.Application.Features.FeatureName.Queries.UseCaseNamePagedList
+namespace CleanArchitecture.Application.Features.FeatureName.Queries.UseCaseNamePagedList;
+
+public class UseCaseNamePagedListQueryHandler : IRequestHandler<UseCaseNamePagedListQuery, PagedResponse<object>>
 {
-    public class UseCaseNamePagedListQueryHandler : IRequestHandler<UseCaseNamePagedListQuery, PagedResponse<object>>
+    public async Task<PagedResponse<object>> Handle(UseCaseNamePagedListQuery request, CancellationToken cancellationToken)
     {
-        public async Task<PagedResponse<object>> Handle(UseCaseNamePagedListQuery request, CancellationToken cancellationToken)
-        {
-            // Handler
+        // Handler
 
-            List<object> data = [];
-            int totalCount = 100;
+        List<object> data = [];
+        int totalCount = 100;
 
-            return new PaginationResponseDto<object>(data, totalCount, request.PageNumber, request.PageSize);
-        }
+        return new PaginationResponseDto<object>(data, totalCount, request.PageNumber, request.PageSize);
     }
 }

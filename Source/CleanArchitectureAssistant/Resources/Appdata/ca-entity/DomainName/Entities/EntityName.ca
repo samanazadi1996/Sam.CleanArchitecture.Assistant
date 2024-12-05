@@ -1,12 +1,11 @@
 ﻿using CleanArchitecture.Domain.Common;
 using System;
 
-namespace CleanArchitecture.Domain.DomainName.Entities
+namespace CleanArchitecture.Domain.DomainName.Entities;
+
+public class EntityName : AuditableBaseEntity
 {
-    public class EntityName : AuditableBaseEntity
+    private EntityName()
     {
-        private EntityName()
-        {
-        }
     }
 }
