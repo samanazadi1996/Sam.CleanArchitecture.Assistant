@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="CleanArchitectureAssistant.Forms.MainWindowControl"
+﻿<UserControl x:Class="CleanArchitectureAssistant.Forms.Settings.SettingsWindowControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -11,40 +11,32 @@
              toolkit:Themes.UseVsTheme="True"
              mc:Ignorable="d"
              d:DesignHeight="300"
+             Loaded="UserControl_Loaded"
              d:DesignWidth="300"
-             Name="MainWindow">
+             Name="Settings">
     <Grid>
         <StackPanel Orientation="Vertical">
 
-            <Button Content="Add UseCase"
+            <Button Content="Add Issues"
                     Height="30" FontWeight="Bold"
-                    Click="ShowAddUseCaseWindow"
+                    Click="AddIssues_OnClick"
                     Margin="10,10,10,0" />
 
-            <Button Content="Add Entity"
+            <Button Content="Check For Update"
                     Height="30" FontWeight="Bold"
-                    Click="ShowAddEntityWindow"
+                    Click="CheckForUpdate_OnClick"
                     Margin="10,10,10,0" />
 
-            <Button Content="Add Language"
-                    Height="30" FontWeight="Bold"
-                    Click="ShowAddLanguageWindow"
-                    Margin="10,10,10,0" />
+            <StackPanel Margin="10,20,10,0" HorizontalAlignment="Right">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
 
-            <Button Content="Add Migration"
-                    Height="30" FontWeight="Bold"
-                    Click="ShowAddMigrationWindow"
-                    Margin="10,10,10,0" />
-
-            <Button Content="Add Repository"
-                    Height="30" FontWeight="Bold"
-                    Click="ShowAddRepositoryWindow"
-                    Margin="10,10,10,0" />
-
-            <Button Content="Settings"
-                    Height="30" FontWeight="Bold"
-                    Click="ShowSettingsWindow"
-                    Margin="10,10,10,0" />
+                    <Button MinHeight="30" Width="Auto" Content="Close" Grid.Column="0" Click="CloseForm"/>
+                </Grid>
+            </StackPanel>
 
 
         </StackPanel>

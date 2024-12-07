@@ -53,6 +53,10 @@
     <Compile Include="Forms\AddMigration\AddMigration.xaml.cs">
       <DependentUpon>AddMigration.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Settings\Settings.cs" />
+    <Compile Include="Forms\Settings\Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddEntity\AddEntity.cs" />
     <Compile Include="Forms\AddEntity\AddEntity.xaml.cs">
       <DependentUpon>AddEntity.xaml</DependentUpon>
@@ -172,6 +176,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Forms\AddMigration\AddMigration.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Settings\Settings.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
