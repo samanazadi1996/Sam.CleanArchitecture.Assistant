@@ -2,14 +2,14 @@
 global using Microsoft.VisualStudio.Shell;
 global using System;
 global using Task = System.Threading.Tasks.Task;
-using CleanArchitectureAssistant.Forms.AddLanguage;
+using CleanArchitectureAssistant.Forms;
 using CleanArchitectureAssistant.Forms.AddEntity;
-using CleanArchitectureAssistant.Forms.AddUseCase;
+using CleanArchitectureAssistant.Forms.AddLanguage;
+using CleanArchitectureAssistant.Forms.AddMigration;
 using CleanArchitectureAssistant.Forms.AddRepository;
+using CleanArchitectureAssistant.Forms.AddUseCase;
 using System.Runtime.InteropServices;
 using System.Threading;
-using CleanArchitectureAssistant.Forms;
-using CleanArchitectureAssistant.Forms.AddMigration;
 
 namespace CleanArchitectureAssistant;
 

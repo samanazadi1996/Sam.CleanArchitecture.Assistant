@@ -76,6 +76,7 @@
     <Compile Include="Infrastructure\Data\UseCaseData.cs" />
     <Compile Include="Infrastructure\Enums\UseCaseType.cs" />
     <Compile Include="Infrastructure\Services\ApplicationService.cs" />
+    <Compile Include="Infrastructure\Services\UpdateService.cs" />
     <Compile Include="Infrastructure\Services\CmdService.cs" />
     <Compile Include="Infrastructure\Services\CommonService.cs" />
     <Compile Include="Infrastructure\Services\EfService.cs" />

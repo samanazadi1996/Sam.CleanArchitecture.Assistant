@@ -24,6 +24,13 @@
                         Padding="3" 
                         Background="Gray"/>
 
+                <Button Content="Check For Update" 
+                        Click="CheckForUpdate_OnClick" 
+                        ToolTip="Report a bug, request a feature, or share an improvement idea by creating a new issue." 
+                        Margin="3" 
+                        Padding="3" 
+                        Background="Gray"/>
+
             </ToolBar>
 
             <Button Content="Add UseCase"
