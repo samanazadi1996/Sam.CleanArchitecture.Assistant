@@ -9,9 +9,9 @@ internal sealed partial class Vsix
 {
     public const string Id = "CleanArchitectureAssistant.81a8eada-9fb6-4859-a99e-cb53387c1d1a";
     public const string Name = "CleanArchitectureAssistant";
-    public const string Description = @"Empty VSIX Project.";
+    public const string Description = @"A powerful Visual Studio extension that streamlines .NET Clean Architecture development, enabling you to write cleaner, more efficient code with unmatched ease.";
     public const string Language = "en-US";
-    public const string Version = "1.0";
-    public const string Author = "saman azadi";
-    public const string Tags = "";
+    public const string Version = "1.0.2";
+    public const string Author = "samanazadi1996";
+    public const string Tags = "CleanArchitecture,CleanArchitectureAssistant";
 }

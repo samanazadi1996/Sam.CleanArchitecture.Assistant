@@ -16,6 +16,9 @@
              Name="Settings">
     <Grid>
         <StackPanel Orientation="Vertical">
+            <Border Padding="10">
+                <TextBlock Text="Settings" FontSize="16" FontWeight="Bold" />
+            </Border>
 
             <Button Content="Add Issues"
                     Height="30" FontWeight="Bold"

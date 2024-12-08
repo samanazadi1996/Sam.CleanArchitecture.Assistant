@@ -76,8 +76,10 @@
     <Compile Include="Infrastructure\Data\LanguageData.cs" />
     <Compile Include="Infrastructure\Data\EmbeddedResourceDataReader.cs" />
     <Compile Include="Infrastructure\Data\RepositoryData.cs" />
+    <Compile Include="Infrastructure\DTOs\EntityDto.cs" />
     <Compile Include="Infrastructure\DTOs\FileDto.cs" />
     <Compile Include="Infrastructure\Data\UseCaseData.cs" />
+    <Compile Include="Infrastructure\DTOs\GetLatestVersionDto.cs" />
     <Compile Include="Infrastructure\Enums\UseCaseType.cs" />
     <Compile Include="Infrastructure\Services\ApplicationService.cs" />
     <Compile Include="Infrastructure\Services\UpdateService.cs" />

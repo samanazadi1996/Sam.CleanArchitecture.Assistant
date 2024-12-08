@@ -16,6 +16,9 @@
              Name="AddUseCase">
     <Grid>
         <StackPanel Orientation="Vertical">
+            <Border Padding="10">
+                <TextBlock Text="Define a New Use Case" FontSize="16" FontWeight="Bold" />
+            </Border>
 
             <StackPanel Margin="10,10,10,0">
                 <Label Content="Feature Name:" FontWeight="Bold"/>

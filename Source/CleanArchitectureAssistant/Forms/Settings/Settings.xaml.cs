@@ -1,6 +1,7 @@
 ﻿using CleanArchitectureAssistant.Infrastructure.Services;
 using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell.Interop;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -20,18 +21,8 @@ public partial class SettingsWindowControl : UserControl
 
     private async void UserControl_Loaded(object sender, RoutedEventArgs e)
     {
-        await LoadFeatures();
     }
 
-
-    private async Task LoadFeatures()
-    {
-    }
-    private async void Execute(object sender, RoutedEventArgs e)
-    {
-
-
-    }
 
     private void AddIssues_OnClick(object sender, RoutedEventArgs e)
     {
@@ -42,25 +33,24 @@ public partial class SettingsWindowControl : UserControl
     {
         try
         {
-            var version = await UpdateService.GetLatestVersion();
+            var latestVersion = await UpdateService.GetLatestVersion();
 
-            if (version is null)
+            if (latestVersion is null)
             {
                 await VS.MessageBox.ShowAsync("Network error occurred. Please try again later.");
                 return;
             }
 
-            var currentVersion = GetCurrentVersion();
-            if (version != currentVersion)
+            if (HasNewVersion(latestVersion.LastUpdated))
             {
                 var result =
                     await VS.MessageBox.ShowAsync(
-                        $"A new version ({version}) is available.", "Do you want to download it?"
+                        $"A new version ({latestVersion.Version}) is available.", "Do you want to download it?"
                         , OLEMSGICON.OLEMSGICON_INFO, OLEMSGBUTTON.OLEMSGBUTTON_YESNO);
 
                 if (result == VSConstants.MessageBoxResult.IDYES)
                 {
-                    ExternalService.NavigateToUrl("https://marketplace.visualstudio.com/items?itemName=SamanAzadi1996.ASPDotnetCoreCleanArchitecture");
+                    ExternalService.NavigateToUrl("https://marketplace.visualstudio.com/items?itemName=SamanAzadi1996.CleanArchitectureAssistant");
                 }
             }
             else
@@ -73,9 +63,23 @@ public partial class SettingsWindowControl : UserControl
             await VS.MessageBox.ShowAsync($"An error occurred: {ex.Message}");
         }
     }
-    private string GetCurrentVersion()
+    private bool HasNewVersion(string lastUpdated)
     {
-        return "1.0.0"; // مقدار نسخه فعلی را تنظیم کنید
+        try
+        {
+            var lastBuild = System.IO.File.GetLastWriteTime(Assembly.GetExecutingAssembly().Location).ToString();
+
+            var dtLastUpdated = DateTime.Parse(lastUpdated);
+            var dtLastBuild = DateTime.Parse(lastBuild);
+
+            return dtLastUpdated > dtLastBuild;
+        }
+        catch (Exception)
+        {
+            // ignored
+        }
+
+        return false;
     }
 
 

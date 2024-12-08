@@ -15,33 +15,36 @@
              Name="MainWindow">
     <Grid>
         <StackPanel Orientation="Vertical">
+            <Border Padding="10">
+                <TextBlock Text="Select Your Tool" FontSize="16" FontWeight="Bold" />
+            </Border>
 
-            <Button Content="Add UseCase"
+            <Button Content="Create New Use Case"
                     Height="30" FontWeight="Bold"
                     Click="ShowAddUseCaseWindow"
                     Margin="10,10,10,0" />
 
-            <Button Content="Add Entity"
+            <Button Content="Create New Entity"
                     Height="30" FontWeight="Bold"
                     Click="ShowAddEntityWindow"
                     Margin="10,10,10,0" />
 
-            <Button Content="Add Language"
+            <Button Content="Create New Language"
                     Height="30" FontWeight="Bold"
                     Click="ShowAddLanguageWindow"
                     Margin="10,10,10,0" />
 
-            <Button Content="Add Migration"
+            <Button Content="Create New Migration"
                     Height="30" FontWeight="Bold"
                     Click="ShowAddMigrationWindow"
                     Margin="10,10,10,0" />
 
-            <Button Content="Add Repository"
+            <Button Content="Create New Repository"
                     Height="30" FontWeight="Bold"
                     Click="ShowAddRepositoryWindow"
                     Margin="10,10,10,0" />
 
-            <Button Content="Settings"
+            <Button Content="Configure Settings"
                     Height="30" FontWeight="Bold"
                     Click="ShowSettingsWindow"
                     Margin="10,10,10,0" />

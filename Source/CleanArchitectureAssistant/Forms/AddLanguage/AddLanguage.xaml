@@ -15,6 +15,9 @@
              Name="AddLanguage">
     <Grid>
         <StackPanel Orientation="Vertical">
+            <Border Padding="10">
+                <TextBlock Text="Add a New Language" FontSize="16" FontWeight="Bold" />
+            </Border>
 
             <StackPanel Margin="10,10,10,0">
                 <Label Content="Language :" FontWeight="Bold"/>

@@ -16,6 +16,9 @@
              Name="AddMigration">
     <Grid>
         <StackPanel Orientation="Vertical">
+            <Border Padding="10">
+                <TextBlock Text="Add New Migration" FontSize="16" FontWeight="Bold" />
+            </Border>
 
             <StackPanel Margin="10,10,10,0">
                 <Label Content="Library (Data Layer):" FontWeight="Bold"/>

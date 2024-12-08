@@ -95,10 +95,7 @@ public partial class AddMigrationWindowControl : UserControl
 
         try
         {
-
-            var selectedItem = LibraryNameComboBox.SelectedItem as ComboBoxItem;
-
-            if (selectedItem == null)
+            if (LibraryNameComboBox.SelectedItem is not ComboBoxItem selectedItem)
                 return;
 
             var selectedText = selectedItem.Content.ToString();
@@ -107,40 +104,10 @@ public partial class AddMigrationWindowControl : UserControl
 
             ContextNameComboBox.Items.Clear();
 
-            if (path != null)
-            {
-                var filePaths = System.IO.Directory.GetFiles(path, "*.cs", SearchOption.AllDirectories);
-
-                foreach (var filePath in filePaths)
-                {
-                    var fileContent = File.ReadAllText(filePath);
-
-                    // Parse the file content using Roslyn
-                    var syntaxTree = CSharpSyntaxTree.ParseText(fileContent);
-                    var root = await syntaxTree.GetRootAsync();
-
-                    // Find all class declarations in the file
-                    var classDeclarations = root.DescendantNodes().OfType<ClassDeclarationSyntax>();
-
-                    foreach (var classDeclaration in classDeclarations)
-                    {
-                        // Check if the class inherits from DbContext
-                        var baseTypes = classDeclaration.BaseList?.Types;
-                        if (baseTypes != null && baseTypes.Value.Any(bt => bt.ToString().Contains("DbContext")))
-                        {
-                            var className = classDeclaration.Identifier.Text;
-
-                            ContextNameComboBox.Items.Add(new ComboBoxItem
-                            {
-                                Content = className
-                            });
-                        }
-                    }
-                }
-            }
-
-
-            if (ContextNameComboBox.Items.Count>0)
+            foreach (var item in await EfService.GetApplicationDbXontext(path))
+                ContextNameComboBox.Items.Add(new ComboBoxItem { Content = item });
+            
+            if (ContextNameComboBox.Items.Count > 0)
             {
                 ContextNameComboBox.SelectedIndex = 0;
             }

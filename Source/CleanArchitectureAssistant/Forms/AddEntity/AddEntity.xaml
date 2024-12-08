@@ -16,6 +16,9 @@
              Name="AddEntity">
     <Grid>
         <StackPanel Orientation="Vertical">
+            <Border Padding="10">
+                <TextBlock Text="Define and Add New Entity" FontSize="16" FontWeight="Bold" />
+            </Border>
 
             <StackPanel Margin="10,10,10,0">
                 <Label Content="Domain Name :" FontWeight="Bold"/>
@@ -35,7 +38,7 @@
                     <ComboBoxItem Content="BaseEntity"/>
                 </ComboBox>
             </StackPanel>
-            
+
             <StackPanel Margin="10,10,10,0">
                 <Label Content="Key Property Type:" FontWeight="Bold"/>
                 <ComboBox MinHeight="30" Name="KeyPropertyTypeComboBox" SelectedIndex="0">
