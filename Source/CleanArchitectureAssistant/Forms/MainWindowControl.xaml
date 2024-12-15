@@ -34,14 +34,14 @@
                     Click="ShowAddLanguageWindow"
                     Margin="10,10,10,0" />
 
-            <Button Content="Create New Migration"
-                    Height="30" FontWeight="Bold"
-                    Click="ShowAddMigrationWindow"
-                    Margin="10,10,10,0" />
-
             <Button Content="Create New Repository"
                     Height="30" FontWeight="Bold"
                     Click="ShowAddRepositoryWindow"
+                    Margin="10,10,10,0" />
+
+            <Button Content="Create New Migration"
+                    Height="30" FontWeight="Bold"
+                    Click="ShowAddMigrationWindow"
                     Margin="10,10,10,0" />
 
             <Button Content="Configure Settings"

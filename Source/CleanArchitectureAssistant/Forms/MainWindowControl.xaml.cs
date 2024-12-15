@@ -1,7 +1,4 @@
-﻿using CleanArchitectureAssistant.Infrastructure.Services;
-using Microsoft.VisualStudio;
-using Microsoft.VisualStudio.Shell.Interop;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 
 namespace CleanArchitectureAssistant.Forms;
