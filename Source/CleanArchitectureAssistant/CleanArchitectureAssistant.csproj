@@ -106,9 +106,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Icons\refresh.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Appdata\ca-use-case\Features\FeatureName\Commands\UseCaseName\UseCaseNameCommand.ca">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
