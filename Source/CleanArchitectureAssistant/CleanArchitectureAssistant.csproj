@@ -45,6 +45,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Forms\AddController\AddController.cs" />
+    <Compile Include="Forms\AddController\AddController.xaml.cs">
+      <DependentUpon>AddController.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddRepository\AddRepository.cs" />
     <Compile Include="Forms\AddRepository\AddRepository.xaml.cs">
       <DependentUpon>AddRepository.xaml</DependentUpon>
@@ -91,6 +95,7 @@
     <Compile Include="Infrastructure\Services\DomainService.cs" />
     <Compile Include="Infrastructure\Services\LanguageService.cs" />
     <Compile Include="Infrastructure\Services\RepositoryService.cs" />
+    <Compile Include="Infrastructure\Services\EndpointService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Commands\MainWindowCommand.cs" />
     <Compile Include="CleanArchitectureAssistantPackage.cs" />
@@ -162,6 +167,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Forms\MainWindow.cs" />
+    <Page Include="Forms\AddController\AddController.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Forms\AddRepository\AddRepository.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

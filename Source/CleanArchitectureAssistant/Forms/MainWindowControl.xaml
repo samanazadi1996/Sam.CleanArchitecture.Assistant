@@ -39,6 +39,11 @@
                     Click="ShowAddRepositoryWindow"
                     Margin="10,10,10,0" />
 
+            <Button Content="Create New Controller"
+                    Height="30" FontWeight="Bold"
+                    Click="ShowAddControllerWindow"
+                    Margin="10,10,10,0" />
+
             <Button Content="Create New Migration"
                     Height="30" FontWeight="Bold"
                     Click="ShowAddMigrationWindow"

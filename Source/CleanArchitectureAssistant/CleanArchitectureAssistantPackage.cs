@@ -11,6 +11,7 @@ using CleanArchitectureAssistant.Forms.AddUseCase;
 using CleanArchitectureAssistant.Forms.Settings;
 using System.Runtime.InteropServices;
 using System.Threading;
+using CleanArchitectureAssistant.Forms.AddController;
 
 namespace CleanArchitectureAssistant;
 
@@ -23,6 +24,7 @@ namespace CleanArchitectureAssistant;
 [ProvideToolWindow(typeof(AddMigrationWindow.Pane), Style = VsDockStyle.Tabbed, Window = WindowGuids.SolutionExplorer)]
 [ProvideToolWindow(typeof(AddRepositoryWindow.Pane), Style = VsDockStyle.Tabbed, Window = WindowGuids.SolutionExplorer)]
 [ProvideToolWindow(typeof(SettingsWindow.Pane), Style = VsDockStyle.Tabbed, Window = WindowGuids.SolutionExplorer)]
+[ProvideToolWindow(typeof(AddControllerWindow.Pane), Style = VsDockStyle.Tabbed, Window = WindowGuids.SolutionExplorer)]
 [ProvideMenuResource("Menus.ctmenu", 1)]
 [Guid(PackageGuids.CleanArchitectureAssistantString)]
 public sealed class CleanArchitectureAssistantPackage : ToolkitPackage

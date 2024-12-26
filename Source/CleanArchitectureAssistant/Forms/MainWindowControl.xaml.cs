@@ -37,4 +37,9 @@ public partial class MainWindowControl : UserControl
     {
         await Settings.SettingsWindow.ShowAsync();
     }
+
+    private async void ShowAddControllerWindow(object sender, RoutedEventArgs e)
+    {
+        await AddController.AddControllerWindow.ShowAsync();
+    }
 }
