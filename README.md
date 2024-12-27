@@ -10,5 +10,8 @@
 - ✔**Migration Management**: Directly add new migrations to the project through Visual Studio, simplifying the database update process.
 - ✔**Add Repository**: Add repositories quickly with pre-configured templates.
 
+- ❌️**Controller Generation**: A planned feature to allow users to quickly generate controllers with pre-configured templates, adhering to Clean Architecture principles.
+
+
 *Clean Architecture Assistant* is the ideal tool for developers and software teams seeking greater speed and accuracy in creating and managing Clean Architecture projects. With this extension, you’ll save time and resources, allowing you to focus on developing essential project features.
 
