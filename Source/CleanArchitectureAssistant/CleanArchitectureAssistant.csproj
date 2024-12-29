@@ -73,9 +73,7 @@
     <Compile Include="Forms\AddUseCase\AddUseCase.xaml.cs">
       <DependentUpon>AddUseCase.xaml</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Resources\Appdata\ca-entity\DomainName\Entities\EntityName.ca">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
+    <Compile Include="Infrastructure\Data\ControllerData.cs" />
     <Compile Include="Infrastructure\Data\EntityData.cs" />
     <Compile Include="Infrastructure\Data\LanguageData.cs" />
     <Compile Include="Infrastructure\Data\EmbeddedResourceDataReader.cs" />
@@ -111,6 +109,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\Appdata\ca-controller\ProductController.ca">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Appdata\ca-entity\DomainName\Entities\EntityName.ca">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Appdata\ca-use-case\Features\FeatureName\Commands\UseCaseName\UseCaseNameCommand.ca">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>

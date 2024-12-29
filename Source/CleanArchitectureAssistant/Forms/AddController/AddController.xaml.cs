@@ -49,25 +49,29 @@ public partial class AddControllerWindowControl : UserControl
 
     private async void Execute(object sender, RoutedEventArgs e)
     {
-        //var entityName = EntityNameComboBox.Text;
-        //if (string.IsNullOrWhiteSpace(entityName))
-        //{
-        //    await VS.MessageBox.ShowAsync("Please provide an entity name.");
-        //    return;
-        //}
+        var entityName = ControllerNameComboBox.Text;
+        if (string.IsNullOrWhiteSpace(entityName))
+        {
+            await VS.MessageBox.ShowAsync("Please provide an controller name.");
+            return;
+        }
 
-        //if (await RepositoryService.AddController(entities.FirstOrDefault(p => p.ClassName == entityName)))
-        //{
-        //    await VS.MessageBox.ShowAsync("The entity was successfully created.");
-        //    EntityNameComboBox.Text = string.Empty;
-        //}
-        //else
-        //{
-        //    await VS.MessageBox.ShowAsync("Failed to create the entity. Please try again.");
-        //}
+        if (await EndpointService.CreateController(NormalizeControllerName(ControllerNameComboBox.Text), ControllerVersionComboBox.Text))
+        {
+            await VS.MessageBox.ShowAsync("The controller was successfully created.");
+            ControllerNameComboBox.Text = string.Empty;
+        }
+        else
+        {
+            await VS.MessageBox.ShowAsync("Failed to create the controller. Please try again.");
+        }
     }
     private string GetNumber(string str)
     {
         return string.Concat(str.Where(p => "123456890".Contains(p)));
+    }
+    private string NormalizeControllerName(string controllerName)
+    {
+        return controllerName.Replace("Controller", "").Replace("controller", "") + "Controller";
     }
 }

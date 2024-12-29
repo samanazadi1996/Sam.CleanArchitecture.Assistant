@@ -21,7 +21,7 @@ public class EntityData
             .Replace("DomainName", domainName)
             .Replace("EntityName", entityName)
             .Replace("AuditableBaseEntity", baseType)
-            .Replace("CleanArchitecture.", solutionName + ".");
+            .Replace("CleanArchitecture.", $"{solutionName}.");
 
         return result;
 
