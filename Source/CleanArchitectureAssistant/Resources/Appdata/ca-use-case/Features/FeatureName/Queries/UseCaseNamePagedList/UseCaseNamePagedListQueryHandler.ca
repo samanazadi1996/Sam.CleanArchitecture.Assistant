@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using CleanArchitecture.Application.DTOs;
 using CleanArchitecture.Application.Wrappers;
 using System;
+using System.Collections.Generic;
 
 namespace CleanArchitecture.Application.Features.FeatureName.Queries.UseCaseNamePagedList;
 

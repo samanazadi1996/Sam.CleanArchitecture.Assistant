@@ -29,7 +29,7 @@ public class ApplicationService
             if (!Directory.Exists(dir))
                 Directory.CreateDirectory(dir);
 
-            foreach (var item in UseCaseData.GetData(await CommonService.GetSolutionName(), featureName, useCaseName, type, returnType))
+            foreach (var item in UseCaseData.GetData(await CommonService.GetSolutionName(), featureName, un, type, returnType))
             {
                 File.WriteAllText(Path.Combine(dir,item.Name),item.Content);
             }

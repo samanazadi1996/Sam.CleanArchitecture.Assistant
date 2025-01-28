@@ -46,6 +46,8 @@
                 <ComboBox MinHeight="30" IsEditable="True" Name="ReturnTypeComboBox">
                     <!-- انواع داده‌های پایه -->
                     <ComboBoxItem Content="void" />
+                    <ComboBoxItem Content="CustomObject" />
+                    <ComboBoxItem Content="List&lt;CustomObject&gt;" />
                     <ComboBoxItem Content="int" />
                     <ComboBoxItem Content="long" />
                     <ComboBoxItem Content="short" />
@@ -90,7 +92,6 @@
                     <ComboBoxItem Content="Tuple&lt;int, string&gt;" />
                     <ComboBoxItem Content="Tuple&lt;int, string, bool&gt;" />
                     <ComboBoxItem Content="KeyValuePair&lt;int, string&gt;" />
-                    <ComboBoxItem Content="CustomObject" />
                 </ComboBox>
 
 

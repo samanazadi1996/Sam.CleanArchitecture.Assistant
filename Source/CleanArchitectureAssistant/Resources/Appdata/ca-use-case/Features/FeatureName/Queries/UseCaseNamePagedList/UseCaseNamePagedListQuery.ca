@@ -2,6 +2,7 @@
 using CleanArchitecture.Application.Parameters;
 using MediatR;
 using System;
+using System.Collections.Generic;
 
 namespace CleanArchitecture.Application.Features.FeatureName.Queries.UseCaseNamePagedList;
 

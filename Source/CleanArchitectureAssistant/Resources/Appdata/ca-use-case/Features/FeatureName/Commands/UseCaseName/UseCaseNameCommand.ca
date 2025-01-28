@@ -1,6 +1,7 @@
 ﻿using CleanArchitecture.Application.Wrappers;
 using MediatR;
 using System;
+using System.Collections.Generic;
 
 namespace CleanArchitecture.Application.Features.FeatureName.Commands.UseCaseName;
 

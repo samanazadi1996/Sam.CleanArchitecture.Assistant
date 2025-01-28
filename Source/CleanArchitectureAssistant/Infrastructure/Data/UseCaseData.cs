@@ -52,7 +52,7 @@ public class UseCaseData
                 Path = "ca-use-case\\Features\\FeatureName\\Commands\\UseCaseName\\UseCaseNameCommandValidator.ca"
             });
         }
-    
+
         foreach (var item in result)
         {
             string fileContent = EmbeddedResourceDataReader.ReadEmbeddedTextFile(item.Path);
@@ -61,7 +61,7 @@ public class UseCaseData
                 .Replace("FeatureName", featureName)
                 .Replace("UseCaseName", useCaseName)
                 .Replace("object", returnType)
-                .Replace("CleanArchitecture.", solutionName+".");
+                .Replace("CleanArchitecture.", solutionName + ".");
         }
 
         if (returnType == "void")
@@ -74,7 +74,7 @@ public class UseCaseData
                     .Replace("return request.MyProperty;", "return BaseResult.Ok();");
             }
         }
-        else if (returnType == "CustomObject")
+        else if (returnType is "CustomObject" or "List<CustomObject>")
         {
             var className = $"{useCaseName}Response";
             var featureType = type == UseCaseType.Command ? "Commands" : "Queries";
@@ -84,22 +84,26 @@ public class UseCaseData
 
             result.Add(new FileDto($"{className}.cs")
             {
-                Content = @$"namespace {solutionName}.Application.Features.{featureName}.{featureType}.{useCaseName};
+                Content = $$"""
+                            namespace {{solutionName}}.Application.Features.{{featureName}}.{{featureType}}.{{useCaseName}};
 
-public class {className}
-{{
-}}",
+                            public class {{className}}
+                            {
+                            }
+                            """,
             });
 
             foreach (var item in result)
             {
+                var tmp = returnType == "CustomObject" ? className : $"List<{className}>";
+
                 item.Content = item.Content
-                    .Replace("CustomObject", className)
+                    .Replace(returnType, tmp)
                     .Replace("return request.MyProperty;", $"return new {className}() {{ }};");
             }
 
         }
-     
+
         return result;
     }
 
