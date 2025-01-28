@@ -23,7 +23,7 @@ public class UpdateService
                 {
                     criteria = new[]
                     {
-                        new { filterType = 7, value = "SamanAzadi1996.ASPDotnetCoreCleanArchitecture" }
+                        new { filterType = 7, value = "SamanAzadi1996.CleanArchitectureAssistant" }
                     },
                 }
             },
