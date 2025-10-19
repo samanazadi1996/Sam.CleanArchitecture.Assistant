@@ -7,10 +7,17 @@
 ## Key Features
 
 - ✔**Quick Use Case Creation**: Automatically generate classes and interfaces for use cases following standard patterns, enabling developers to create new use cases effortlessly.
+
 - ✔**Entity Generation**: Easily create entities with Clean Architecture principles, optimizing the data model design process.
+
 - ✔**Add New Languages**: Seamlessly add new languages to support multi-language projects without complex configuration.
+
 - ✔**Add Repository**: Add repositories quickly with pre-configured templates.
+
 - ✔**Controller Generation**: A planned feature to allow users to quickly generate controllers with pre-configured templates, adhering to Clean Architecture principles.
+
+- ✔**Add Endpoint (Minimal API) 🆕**: Quickly generate new Minimal API endpoints with standardized structure, including route registration and handler setup — fully aligned with Clean Architecture practices.
+
 - ✔**Migration Management**: Directly add new migrations to the project through Visual Studio, simplifying the database update process.
 
 
