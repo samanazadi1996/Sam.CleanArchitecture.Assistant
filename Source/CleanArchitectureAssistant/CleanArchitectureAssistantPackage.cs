@@ -1,7 +1,7 @@
 ﻿global using Community.VisualStudio.Toolkit;
 global using Microsoft.VisualStudio.Shell;
 global using System;
-global using Task = System.Threading.Tasks.Task;
+global using System.Threading.Tasks;
 using CleanArchitectureAssistant.Forms;
 using CleanArchitectureAssistant.Forms.AddEntity;
 using CleanArchitectureAssistant.Forms.AddLanguage;
@@ -12,6 +12,7 @@ using CleanArchitectureAssistant.Forms.Settings;
 using System.Runtime.InteropServices;
 using System.Threading;
 using CleanArchitectureAssistant.Forms.AddController;
+using CleanArchitectureAssistant.Forms.AddEndpoint;
 
 namespace CleanArchitectureAssistant;
 
@@ -25,6 +26,7 @@ namespace CleanArchitectureAssistant;
 [ProvideToolWindow(typeof(AddRepositoryWindow.Pane), Style = VsDockStyle.Tabbed, Window = WindowGuids.SolutionExplorer)]
 [ProvideToolWindow(typeof(SettingsWindow.Pane), Style = VsDockStyle.Tabbed, Window = WindowGuids.SolutionExplorer)]
 [ProvideToolWindow(typeof(AddControllerWindow.Pane), Style = VsDockStyle.Tabbed, Window = WindowGuids.SolutionExplorer)]
+[ProvideToolWindow(typeof(AddEndpointWindow.Pane), Style = VsDockStyle.Tabbed, Window = WindowGuids.SolutionExplorer)]
 [ProvideMenuResource("Menus.ctmenu", 1)]
 [Guid(PackageGuids.CleanArchitectureAssistantString)]
 public sealed class CleanArchitectureAssistantPackage : ToolkitPackage

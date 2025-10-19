@@ -44,6 +44,11 @@
                     Click="ShowAddControllerWindow"
                     Margin="10,10,10,0" />
 
+            <Button Content="Create New Endpoint"
+                    Height="30" FontWeight="Bold"
+                    Click="ShowAddEndpointWindow"
+                    Margin="10,10,10,0" />
+
             <Button Content="Create New Migration"
                     Height="30" FontWeight="Bold"
                     Click="ShowAddMigrationWindow"

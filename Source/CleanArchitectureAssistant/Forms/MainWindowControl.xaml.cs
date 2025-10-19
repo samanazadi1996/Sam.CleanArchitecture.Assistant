@@ -42,4 +42,8 @@ public partial class MainWindowControl : UserControl
     {
         await AddController.AddControllerWindow.ShowAsync();
     }
+    private async void ShowAddEndpointWindow(object sender, RoutedEventArgs e)
+    {
+        await AddEndpoint.AddEndpointWindow.ShowAsync();
+    }
 }

@@ -45,6 +45,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Forms\AddEndpoint\AddEndpointWindow.cs" />
+    <Compile Include="Forms\AddEndpoint\AddEndpoint.xaml.cs">
+      <DependentUpon>AddEndpoint.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddController\AddController.cs" />
     <Compile Include="Forms\AddController\AddController.xaml.cs">
       <DependentUpon>AddController.xaml</DependentUpon>
@@ -73,6 +77,7 @@
     <Compile Include="Forms\AddUseCase\AddUseCase.xaml.cs">
       <DependentUpon>AddUseCase.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\Data\EndpointData.cs" />
     <Compile Include="Infrastructure\Data\ControllerData.cs" />
     <Compile Include="Infrastructure\Data\EntityData.cs" />
     <Compile Include="Infrastructure\Data\LanguageData.cs" />
@@ -84,6 +89,7 @@
     <Compile Include="Infrastructure\DTOs\GetLatestVersionDto.cs" />
     <Compile Include="Infrastructure\Enums\UseCaseType.cs" />
     <Compile Include="Infrastructure\Services\ApplicationService.cs" />
+    <Compile Include="Infrastructure\Services\EndpointService.cs" />
     <Compile Include="Infrastructure\Services\UpdateService.cs" />
     <Compile Include="Infrastructure\Services\CmdService.cs" />
     <Compile Include="Infrastructure\Services\CommonService.cs" />
@@ -148,6 +154,9 @@
     <EmbeddedResource Include="Resources\Appdata\ca-repo\ProductRepository.ca">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Appdata\ca-endpoint\ProductEndpoint.ca">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <Content Include="License.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
@@ -171,6 +180,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Forms\MainWindow.cs" />
+    <Page Include="Forms\AddEndpoint\AddEndpoint.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Forms\AddController\AddController.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

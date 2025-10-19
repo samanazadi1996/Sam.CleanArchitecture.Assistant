@@ -16,6 +16,9 @@ public class ControllerService
 
         var dir = Path.Combine(endpointPath, "Controllers");
 
+        if (!Directory.Exists(dir))
+            return [];
+
         return Directory.GetDirectories(dir)
             .Select(Path.GetFileName)
             .ToList();
