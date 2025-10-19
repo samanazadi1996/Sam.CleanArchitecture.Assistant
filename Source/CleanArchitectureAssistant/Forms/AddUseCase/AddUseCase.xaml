@@ -15,7 +15,11 @@
              d:DesignWidth="300"
              Name="AddUseCase">
     <Grid>
-        <StackPanel Orientation="Vertical">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="49*"/>
+            <RowDefinition Height="11*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical" Grid.RowSpan="2" Margin="0,0,0,-131">
             <Border Padding="10">
                 <TextBlock Text="Define a New Use Case" FontSize="16" FontWeight="Bold" />
             </Border>
@@ -94,6 +98,11 @@
                     <ComboBoxItem Content="KeyValuePair&lt;int, string&gt;" />
                 </ComboBox>
 
+                <StackPanel Margin="10,10,10,0">
+                    <Label Content="Use Internal Mediator :" FontWeight="Bold"/>
+                    <CheckBox Name="UseInternalMediatorCheckBox" MinHeight="30" Margin="10,0,0,0"
+                          ></CheckBox>
+                </StackPanel>
 
             </StackPanel>
 

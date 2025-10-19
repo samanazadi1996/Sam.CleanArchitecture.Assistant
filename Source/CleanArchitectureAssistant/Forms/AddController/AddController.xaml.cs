@@ -21,7 +21,7 @@ public partial class AddControllerWindowControl : UserControl
     private async void UserControl_Loaded(object sender, RoutedEventArgs e)
     {
         var entities = await DomainService.GetEntities();
-        var versions = await EndpointService.GetControllerVersions();
+        var versions = await ControllerService.GetControllerVersions();
 
         ControllerVersionComboBox.Items.Clear();
         ControllerNameComboBox.Items.Clear();
@@ -56,7 +56,7 @@ public partial class AddControllerWindowControl : UserControl
             return;
         }
 
-        if (await EndpointService.CreateController(NormalizeControllerName(ControllerNameComboBox.Text), ControllerVersionComboBox.Text))
+        if (await ControllerService.CreateController(NormalizeControllerName(ControllerNameComboBox.Text), ControllerVersionComboBox.Text))
         {
             await VS.MessageBox.ShowAsync("The controller was successfully created.");
             ControllerNameComboBox.Text = string.Empty;

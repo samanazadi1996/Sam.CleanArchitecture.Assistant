@@ -93,7 +93,7 @@
     <Compile Include="Infrastructure\Services\DomainService.cs" />
     <Compile Include="Infrastructure\Services\LanguageService.cs" />
     <Compile Include="Infrastructure\Services\RepositoryService.cs" />
-    <Compile Include="Infrastructure\Services\EndpointService.cs" />
+    <Compile Include="Infrastructure\Services\ControllerService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Commands\MainWindowCommand.cs" />
     <Compile Include="CleanArchitectureAssistantPackage.cs" />

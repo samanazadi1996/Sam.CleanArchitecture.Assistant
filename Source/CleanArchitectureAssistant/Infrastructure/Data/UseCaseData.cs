@@ -7,7 +7,7 @@ namespace CleanArchitectureAssistant.Infrastructure.Data;
 public class UseCaseData
 {
     public static List<FileDto> GetData(string solutionName,
-        string featureName, string useCaseName, UseCaseType type, string returnType)
+        string featureName, string useCaseName, UseCaseType type, string returnType, bool useInternalMediator)
     {
         List<FileDto> result = [];
 
@@ -61,6 +61,7 @@ public class UseCaseData
                 .Replace("FeatureName", featureName)
                 .Replace("UseCaseName", useCaseName)
                 .Replace("object", returnType)
+                .Replace("using MediatR;", useInternalMediator ? $"using {solutionName}.Application.Interfaces;" : "using MediatR;")
                 .Replace("CleanArchitecture.", solutionName + ".");
         }
 

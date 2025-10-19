@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CleanArchitectureAssistant.Infrastructure.Services;
 
-public class EndpointService
+public class ControllerService
 {
     public static async Task<List<string>> GetControllerVersions()
     {

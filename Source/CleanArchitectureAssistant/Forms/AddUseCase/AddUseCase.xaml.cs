@@ -78,8 +78,10 @@ public partial class AddUseCaseWindowControl : UserControl
             return;
         }
 
+        var useInternalMediator = UseInternalMediatorCheckBox.IsChecked == true;
 
-        if (await ApplicationService.CreateUseCase(featureName, useCaseName, useCaseType, returnType))
+
+        if (await ApplicationService.CreateUseCase(featureName, useCaseName, useCaseType, returnType, useInternalMediator))
         {
             await VS.MessageBox.ShowAsync("The use case was created successfully.");
             UseCaseNameTextBox.Text = string.Empty;
