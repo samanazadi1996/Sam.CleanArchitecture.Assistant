@@ -11,7 +11,7 @@ public class CommonService
     {
         var slnName = (await VS.Solutions.GetCurrentSolutionAsync())?.Name;
 
-        return slnName?.Replace(".sln", "");
+        return slnName?.Replace(".slnx", "").Replace(".sln", "");
     }
     public static async Task<List<string>> GetProjectsPath()
     {
